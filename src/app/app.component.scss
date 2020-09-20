@@ -70,11 +70,12 @@
  }
 
  ion-menu {
- 	--background: url(../assets/images/img_menu.png) 0 0/100% 100% no-repeat;
+	 // --background: url(../assets/images/img_menu.png) 0 0/100% 100% no-repeat;
+	//  background-color: gray;
  	--width: calc(100% - 50px);
 
  	ion-content {
- 		--background: rgba(0, 0, 0, 0) !important;
+ 		// --background: rgba(0, 0, 0, 0) !important;
 
  	}
 
@@ -83,7 +84,7 @@
 
  		h2 {
  			margin: 0;
- 			color: var(--white);
+ 			color: black;
  			font-size: 1.6rem;
 
  			span {
@@ -118,12 +119,12 @@
  			ion-icon {
  				font-size: 1.4rem;
  				min-width: 47px;
- 				color: var(--primary);
+ 				// color: ;
  			}
 
  			h2 {
  				margin: 0;
- 				color: var(--white);
+ 				color: black;
  				font-weight: 500;
  				font-size: 1.1rem;
  				letter-spacing: 2px;
@@ -146,7 +147,7 @@
  			width: fit-content;
 
  			h2 {
- 				color: var(--white);
+ 				color: var(--black);
  				display: flex;
  				align-items: center;
  				margin: auto;

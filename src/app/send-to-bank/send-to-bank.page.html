@@ -1,0 +1,56 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			{{'send_to_bank' | translate}}
+		</ion-title>
+	</ion-toolbar>
+	<div class="balance_available">
+		<h2>{{'balance_available' | translate}}</h2>
+		<h3>$2300.00</h3>
+	</div>
+</ion-header>
+
+<ion-content class="bg_color">
+	<div class="form">
+		<ion-list lines="none">
+			<ion-card>
+				<h2>{{'provide_bank_details' | translate}}</h2>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"full_name" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="Operum England"></ion-input>
+				</ion-item>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"bank_name" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="Bank of New York"></ion-input>
+				</ion-item>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"branch_code" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="NYC123456"></ion-input>
+				</ion-item>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"account_number" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="1234 5678 1234 6789"></ion-input>
+				</ion-item>
+
+			</ion-card>
+
+			<ion-card>
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"enter_amount_transfer" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="$1000"></ion-input>
+				</ion-item>
+			</ion-card>
+		</ion-list>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<ion-button size="large" expand="full" class="btn">{{'submit' | translate}}</ion-button>
+</ion-footer>

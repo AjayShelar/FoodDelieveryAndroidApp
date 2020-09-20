@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { APP_CONFIG, BaseAppConfig } from './app.config';
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -41,9 +42,26 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     StatusBar,
     SplashScreen,
+
+
     { provide: APP_CONFIG, useValue: BaseAppConfig },
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+      AuthService,
+      // { provide: BrowserXhr, useClass: NgProgressRef }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+
+import { environment } from '../environments/environment.prod';
+
+import Amplify, { Auth } from 'aws-amplify';
+import { AuthService } from './api/auth.service';
+import { GoogleMapsService } from './google-maps.service';
+import { ConnectivityServiceService } from './connectivity-service.service';
+import { Network } from '@ionic-native/network';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
+
+Amplify.configure(environment.amplify);

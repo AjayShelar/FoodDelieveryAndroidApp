@@ -105,7 +105,47 @@ const routes: Routes = [
   {
     path: 'search-result',
     loadChildren: () => import('./search-result/search-result.module').then( m => m.SearchResultPageModule)
-  }
+  },
+  {
+    path: 'location-select',
+    loadChildren: () => import('./location-select/location-select.module').then( m => m.LocationSelectPageModule)
+  },
+  {
+    path: 'new-orders',
+    loadChildren: () => import('./new-orders/new-orders.module').then( m => m.NewOrdersPageModule)
+  },
+  {
+    path: 'order-info',
+    loadChildren: () => import('./order-info/order-info.module').then( m => m.OrderInfoPageModule)
+  },
+  {
+    path: 'earnings',
+    loadChildren: () => import('./earnings/earnings.module').then( m => m.EarningsPageModule)
+  },
+  {
+    path: 'my-items',
+    loadChildren: () => import('./my-items/my-items.module').then( m => m.MyItemsPageModule)
+  },
+  {
+    path: 'edit-item',
+    loadChildren: () => import('./edit-item/edit-item.module').then( m => m.EditItemPageModule)
+  },
+  {
+    path: 'reviews',
+    loadChildren: () => import('./reviews/reviews.module').then( m => m.ReviewsPageModule)
+  },
+  {
+    path: 'send-to-bank',
+    loadChildren: () => import('./send-to-bank/send-to-bank.module').then( m => m.SendToBankPageModule)
+  },
+  // {
+  //   path: 'profile',
+  //   loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  // },
+  {
+    path: 'add-address',
+    loadChildren: () => import('./add-address/add-address.module').then( m => m.AddAddressPageModule)
+  },
 ];
 
 @NgModule({

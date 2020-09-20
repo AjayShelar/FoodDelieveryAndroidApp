@@ -16,8 +16,19 @@
 </ion-header>
 
 <ion-content class="bg_color">
-	<div class="map" (click)="title()">
-		<img src="assets/images/map.png">
-		<ion-icon class="zmdi zmdi-pin" style="top:38%; right: 50%;"></ion-icon>
-	</div>
+	<!-- <div class="map" (click)="title()"> -->
+		
+		  
+		  
+			
+			<div id="map_canvas1">
+			  <table class="smallPanel">
+				<tr>
+				  <td ><ion-input type="text" id="search_address" #search_address style="ime-mode: disable" readonly></ion-input></td>
+				  <td><ion-button (click)="onButton1_click($event)">Search</ion-button></td>
+				</tr>
+			  </table>
+			</div>
+		  
+	<!-- </div> -->
 </ion-content>

@@ -1,0 +1,1088 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			<span class="d-flex">
+				<span class="center">
+					{{'my_items' | translate}}
+				</span>
+				<ion-icon class="zmdi zmdi-search end ion-text-end"></ion-icon>
+			</span>
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="item_container">
+		<ion-row>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/1.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Wight Top</h3>
+						<h4 (click)="item_details()">68 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$30.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item3.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">119 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_4.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Black Cotton Top</h3>
+						<h4 (click)="item_details()">98 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$42.00</span>
+							<ion-badge class="end">
+								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/item_6.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()">Summer Full Sleven Tshirt</h3>
+						<h4 (click)="item_details()">1124 {{'sold' | translate}}</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$35.00</span>
+							<ion-badge class="end">
+								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+
+			<ion-col size="6">
+				<div class="item out_of_stock">
+					<div class="item_img center_img" (click)="item_details()">
+						<img src="assets/images/2.png" class="crop_img">
+					</div>
+					<div class="item_details">
+						<h3 (click)="item_details()"> Floral Print Shirt</h3>
+						<h4 (click)="item_details()">Lecoil Evea</h4>
+						<h5 class="d-flex" (click)="reviews()">
+							<span class="price">$44.00</span>
+							<ion-badge class="end">
+								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+							</ion-badge>
+						</h5>
+					</div>
+				</div>
+			</ion-col>
+		</ion-row>
+	</div>
+
+	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+		<ion-fab-button (click)="item_details()">
+			<span>+</span>
+		</ion-fab-button>
+	</ion-fab>
+</ion-content>

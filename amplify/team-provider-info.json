@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gharseybuyer-dev-53954-authRole",
+      "UnauthRoleArn": "arn:aws:iam::764417993088:role/amplify-gharseybuyer-dev-53954-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::764417993088:role/amplify-gharseybuyer-dev-53954-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-gharseybuyer-dev-53954-deployment",
+      "UnauthRoleName": "amplify-gharseybuyer-dev-53954-unauthRole",
+      "StackName": "amplify-gharseybuyer-dev-53954",
+      "StackId": "arn:aws:cloudformation:ap-south-1:764417993088:stack/amplify-gharseybuyer-dev-53954/9dcda6e0-fad5-11ea-9aee-022c26c02f7c",
+      "AmplifyAppId": "d2289bf8uldq40"
+    },
+    "categories": {
+      "function": {
+        "gharseybuyer486bcbcd486bcbcdCreateAuthChallenge": {
+          "CHALLENGEANSWER": ""
+        },
+        "gharseybuyer486bcbcd486bcbcdDefineAuthChallenge": {},
+        "gharseybuyer486bcbcd486bcbcdPreSignup": {
+          "DOMAINWHITELIST": ""
+        },
+        "gharseybuyer486bcbcd486bcbcdVerifyAuthChallengeResponse": {}
+      },
+      "auth": {
+        "gharseybuyer486bcbcd486bcbcd": {}
+      }
+    }
+  }
+}

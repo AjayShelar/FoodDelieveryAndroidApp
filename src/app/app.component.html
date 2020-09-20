@@ -1,13 +1,27 @@
 <ion-app [dir]="rtlSide">
+
 	<ion-split-pane contentId="main-content">
 		<ion-menu contentId="main-content" type="overlay">
 			<div class="profile_box">
 				<h2>
-					{{"hey" | translate}},
-					<span class="first_name">Samantha</span>
-					<span class="last_name">Smith</span>
+					<!-- {{"hey" | translate}}, -->
+					<span class="first_name">Vinay</span>
+					<span class="last_name">Sharma</span>
+
 				</h2>
+				<div style="font-size: 20px; color: black;">
+					<p><i class="zmdi zmdi-pin animated infinite wobble zmdi-hc-fw"></i> wobble</p>
+					<ion-item>
+						<ion-label *ngIf="mode==='seller'">Seller</ion-label>
+						<ion-label *ngIf="mode==='buyer'">Buyer</ion-label>
+						<ion-toggle (ionChange)="toggle($event)"></ion-toggle>
+					</ion-item>
+				
+					<!-- <p><i class="zmdi zmdi-directions-bike animated infinite fadeInLeft zmdi-hc-fw"></i> fadeInLeft</p> -->
+					<!-- <p><i class="zmdi zmdi-notifications-active animated infinite pulse zmdi-hc-fw mdc-text-blue"></i> pulse</p> -->
+					</div>
 			</div>
+			
 			<ion-content fullscreen>
 				<ion-list lines="none">
 					<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
@@ -19,12 +33,7 @@
 						</ion-item>
 					</ion-menu-toggle>
 
-					<div class="buy_this_app" *ngIf="config.showBuyPromt" (click)="buyAppAction()">
-						<h2>
-							<ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>
-							{{"buy_this_app" | translate}}
-						</h2>
-					</div>
+					
 				</ion-list>
 			</ion-content>
 		</ion-menu>

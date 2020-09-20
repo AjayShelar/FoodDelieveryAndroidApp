@@ -305,7 +305,7 @@ ion-header {
 
 
 ion-modal {
-	--background: rgba(0, 0, 0, 0) !important;
+	--background:var(--background)!important;
 }
 
 .alert-wrapper {

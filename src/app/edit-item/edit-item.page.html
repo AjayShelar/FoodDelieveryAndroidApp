@@ -1,0 +1,114 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'edit_item' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+	<div class="item_image_container">
+		<div class="img_box center_img add_img">
+			<ion-icon class="zmdi zmdi-camera"></ion-icon>
+		</div>
+		<div class="img_box center_img">
+			<img src="assets/images/item_4.png" class="crop_img">
+			<ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+		</div>
+		<div class="img_box center_img">
+			<img src="assets/images/item_4_a.png" class="crop_img">
+			<ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+		</div>
+		<div class="img_box center_img">
+			<img src="assets/images/item_4_b.png" class="crop_img">
+			<ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+		</div>
+		<div class="img_box center_img">
+			<img src="assets/images/item_4_a.png" class="crop_img">
+			<ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+		</div>
+		<div class="img_box center_img">
+			<img src="assets/images/item_4.png" class="crop_img">
+			<ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+		</div>
+		<div class="img_box center_img">
+			<img src="assets/images/item_4_a.png" class="crop_img">
+			<ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+		</div>
+		<div class="img_box center_img">
+			<img src="assets/images/item_4_b.png" class="crop_img">
+			<ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+		</div>
+	</div>
+	<div class="form">
+		<ion-list lines="none">
+			<ion-card>
+				<h2>{{'item_info' | translate}}</h2>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"product_id" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="TST11414"></ion-input>
+				</ion-item>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"product_title" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="Black Cotton Top"></ion-input>
+				</ion-item>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"item_category" | translate}}</ion-label>
+					<ion-select mode="md" placeholder="" [(ngModel)]="item_category">
+						<ion-select-option value="1">Apparelas</ion-select-option>
+						<ion-select-option value="2">Footwer</ion-select-option>
+						<ion-select-option value="3">Sportswear</ion-select-option>
+					</ion-select>
+				</ion-item>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"item_sub_category" | translate}}</ion-label>
+					<ion-select mode="md" placeholder="" [(ngModel)]="item_sub_category">
+						<ion-select-option value="1">Women's Apparelas</ion-select-option>
+						<ion-select-option value="2">Women's Footwer</ion-select-option>
+						<ion-select-option value="3"> Women's Sportswear</ion-select-option>
+					</ion-select>
+				</ion-item>
+			</ion-card>
+
+			<ion-card>
+				<h2>{{'description' | translate}}</h2>
+
+				<ion-item lines="none">
+					<ion-label mode="md" position="stacked">{{"brief_your_product" | translate}}</ion-label>
+					<ion-textarea rows="4" mode="md" type="text" value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."></ion-textarea>
+				</ion-item>
+			</ion-card>
+
+			<ion-card>
+				<h2>{{'pricing_stock' | translate}}</h2>
+				<ion-row>
+					<ion-col size="6">
+						<ion-item lines="none">
+							<ion-label mode="md" position="stacked">{{"set_product_price" | translate}}</ion-label>
+							<ion-input rows="4" mode="md" type="text" value="$30.00"></ion-input>
+						</ion-item>
+					</ion-col>
+
+					<ion-col size="6">
+						<ion-item lines="none">
+							<ion-label mode="md" position="stacked">{{"stock_availibility" | translate}}</ion-label>
+							<ion-select mode="md" placeholder="" [(ngModel)]="stock_availibility">
+								<ion-select-option value="1">In Stock</ion-select-option>
+								<ion-select-option value="2">Out of Stock</ion-select-option> 
+							</ion-select>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+		</ion-list>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<ion-button size="large" expand="full" class="btn">{{'update' | translate}}</ion-button>
+</ion-footer>

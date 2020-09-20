@@ -1,0 +1,917 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			{{'new_orders' | translate}}
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+	<ion-list lines="none">
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info"> 
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Pooja Gaikwad | Western Express Highway</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4> 
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>Emili Williamson |  andheri station </h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224126
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$39.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/2.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Floral Print Shirt</h2>
+							<h3>Ajay Singh |  Western Express Highway</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224112
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.00</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11487</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Pooja Gaikwad | Western Express Highway</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>Emili Williamson |  andheri station </h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224126
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$39.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/2.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Floral Print Shirt</h2>
+							<h3>Ajay Singh |  Western Express Highway</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224112
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.00</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11487</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Vinay Sharma | Andheri</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>Priya Agarawal |  Borivali West</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224126
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$39.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/2.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Floral Print Shirt</h2>
+							<h3>Ajay Singh | Andheri West</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224112
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.00</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11487</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Vinay Sharma | Kandivali </h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>Shivam Sonawane |  Malad west </h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224126
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$39.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/2.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Floral Print Shirt</h2>
+							<h3>Ganesh Dange | Powai</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224112
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.00</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11487</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Shekar Sharma | Chandiwali</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>Vinay Sharma | Kandivali</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224126
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$39.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/2.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Floral Print Shirt</h2>
+							<h3>Abhishek Tandon | Saki NAKA  </h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224112
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.00</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11487</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Pooja Gaikwad | Western Express Highway</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224154
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item3.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>Emili Williamson |  andheri station </h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 14 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224126
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$39.50</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11414</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		
+		
+		<ion-item (click)="order_info()">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/2.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Floral Print Shirt</h2>
+							<h3>Ajay Singh |  Ghatkopar</h3>
+							<h4 class="d-flex">
+								{{'ordered_on' | translate}} 24 Jun, 11:40
+								<span class="end ion-text-end">
+									{{'order_id' | translate}} 224112
+								</span>
+							</h4>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'payment' | translate}}</h2>
+									<h3>$30.00</h3>
+								</div>
+							</ion-col>
+							<ion-col size="3">
+								<div class="text_box">
+									<h2>{{'product_id' | translate}}</h2>
+									<h3>TST11487</h3>
+								</div>
+							</ion-col>
+							<ion-col size="2" class="ion-text-center">
+								<div class="text_box">
+									<h2>{{'qty' | translate}}</h2>
+									<h3>1</h3>
+								</div>
+							</ion-col>
+							<ion-col size="4" class="ion-text-end">
+								<div class="text_box order_status end">
+									<h2>{{'order_status' | translate}}</h2>
+									<h3>{{'pending' | translate}}</h3>
+								</div>
+							</ion-col>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>

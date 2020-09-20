@@ -1,0 +1,16 @@
+{
+  "trigger": true,
+  "modules": [
+    "boilerplate-define-challenge"
+  ],
+  "parentResource": "gharseybuyer486bcbcd486bcbcd",
+  "functionName": "gharseybuyer486bcbcd486bcbcdDefineAuthChallenge",
+  "resourceName": "gharseybuyer486bcbcd486bcbcdDefineAuthChallenge",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/DefineAuthChallenge",
+  "triggerTemplate": "DefineAuthChallenge.json.ejs",
+  "roleName": "gharseybuyer486bcbcd486bcbcdDefineAuthChallenge",
+  "skipEdit": true,
+  "enableCors": false
+}

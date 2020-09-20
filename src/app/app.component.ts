@@ -16,6 +16,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
 })
 export class AppComponent implements OnInit {
   rtlSide = "left";
+  mode = 'buyer';
   public selectedIndex = 0;
   public appPages = [
     {
@@ -55,11 +56,11 @@ export class AppComponent implements OnInit {
       url: '/contact-us',
       icon: 'zmdi zmdi-comment-text'
     },
-    {
-      title: 'languges',
-      url: '/language',
-      icon: 'zmdi zmdi-globe'
-    },
+    // {
+    //   title: 'languges',
+    //   url: '/language',
+    //   icon: 'zmdi zmdi-globe'
+    // },
     {
       title: 'logout',
       url: '/sign-in',
@@ -74,12 +75,16 @@ export class AppComponent implements OnInit {
     private platform: Platform, private navCtrl: NavController,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
+    
     private translate: TranslateService, private myEvent: MyEvent) {
     this.initializeApp();
     this.myEvent.getLanguageObservable().subscribe(value => {
       this.navCtrl.navigateRoot(['./']);
       this.globalize(value);
     });
+    this.mode = 'buyer';
+    localStorage.setItem('mode', JSON.stringify({mode:'buyer'}));
+
   }
 
   initializeApp() {
@@ -118,7 +123,20 @@ export class AppComponent implements OnInit {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
-  buyAppAction() {
-    window.open("http://bit.ly/cc2_ShopCart", '_system', 'location=no');
+  toggle(event){
+    console.log(event);
+    if(event.detail['checked']){
+      this.mode = 'seller';
+      localStorage.setItem('mode', JSON.stringify({mode:'seller'}));
+
+
+    }else{
+      this.mode = 'buyer';
+    localStorage.setItem('mode', JSON.stringify({mode:'buyer'}));
+
+
+
+    }
   }
+ 
 }

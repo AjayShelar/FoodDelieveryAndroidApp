@@ -1,0 +1,1061 @@
+<ion-header class="bg_transparent">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			{{'earnings' | translate}}
+		</ion-title>
+	</ion-toolbar>
+
+	<ion-card>
+		<ion-row>
+			<ion-col size="4" class="ion-text-center revenue">
+				<p>{{'revenue' | translate}}</p>
+				<h2>$5.9k</h2>
+			</ion-col>
+			<ion-col size="4" class="ion-text-center">
+				<p>{{'balance' | translate}}</p>
+				<h2>$ 2.3k</h2>
+			</ion-col>
+			<ion-col size="4" class="ion-text-center send_to_bank" (click)="send_to_bank()">
+				<p>{{'send_to' | translate}}</p>
+				<h2>
+					{{'bank' | translate}}
+				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+				</h2>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+</ion-header>
+
+<ion-content class="bg_color">
+	<ion-card class="barChart">
+		<div class="card_header d-flex">
+			<h2>{{'orders_statastics' | translate}}</h2>
+
+			<ion-select class="end" mode="ios" placeholder="" interface="popover" [(ngModel)]="time">
+				<ion-select-option value="1">{{'last_week' | translate}}</ion-select-option>
+				<ion-select-option value="2">{{'last_month' | translate}}</ion-select-option>
+				<ion-select-option value="3"> {{'last_years' | translate}}</ion-select-option>
+			</ion-select>
+		</div>
+		<div class="bar"> <canvas #barChart height="150"></canvas></div>
+	</ion-card>
+
+
+	<ion-list lines="none">
+		<h2>{{'recent_transactions' | translate}}</h2>
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>Sent Successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item><ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224154</span>
+								
+								<span class="end ion-text-end">
+									 $30.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="earn">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/item3.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>Summer Full Sleven Tshirt</h2>
+							<h3>{{'ordered_on' | translate}} 14 Jun, 11:40</h3>
+							<h4 class="d-flex">
+								 {{'order_id' | translate}}&nbsp;
+								<span>224126</span>
+								
+								<span class="end ion-text-end">
+									 $39.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>	
+		
+		
+		<ion-item class="spent">
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+						<img src="assets/images/logo_2.png" class="crop_img">
+	
+						</div>
+						<div class="text_box">
+							<h2>{{'send_to_bank' | translate}} </h2>
+							<h3>{{'sent' | translate}} 24 Jun, 10:39</h3>
+							<h4 class="d-flex"> 
+								<span>sent_successfuly</span>
+								<span class="end ion-text-end">
+									 $29.00
+								</span>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
