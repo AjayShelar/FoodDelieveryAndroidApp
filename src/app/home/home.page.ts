@@ -8,6 +8,7 @@ import { GoogleMap , GoogleMaps,
   Marker,
   Environment} from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -21,12 +22,17 @@ export class HomePage implements OnInit {
   longitude: number;
   mode;
   constructor(private route: Router,
+    public navCtrl:NavController
     ) { 
 
-    this.mode = JSON.parse(localStorage.getItem('mode'))['mode'];
-if(this.mode ==='seller'){
-
-}
+      this.mode = JSON.parse(localStorage.getItem('mode'))['mode'];
+      if(this.mode ==='seller'){
+        this.navCtrl.navigateRoot(['./new-orders']);
+      
+      }else{
+      this.navCtrl.navigateRoot(['./home']);
+  
+      }
       
     }
 
