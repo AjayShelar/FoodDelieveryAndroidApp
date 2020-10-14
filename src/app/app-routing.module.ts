@@ -43,6 +43,10 @@ const routes: Routes = [
     loadChildren: () => import('./reviews/reviews.module').then( m => m.ReviewsPageModule)
   },
   {
+    path: 'seller',
+    loadChildren: () => import('./seller-info/seller-info.module').then( m => m.SellerInfoPageModule)
+  },
+  {
     path: 'seller-info',
     loadChildren: () => import('./seller-info/seller-info.module').then( m => m.SellerInfoPageModule)
   },
@@ -145,6 +149,10 @@ const routes: Routes = [
   {
     path: 'add-address',
     loadChildren: () => import('./add-address/add-address.module').then( m => m.AddAddressPageModule)
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
 ];
 

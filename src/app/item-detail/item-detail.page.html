@@ -21,6 +21,8 @@
 		<h3 [ngClass]="FavoriteIcon ? 'active' : ''" (click)="toggleFavoriteIcon()">
 			<ion-icon class="zmdi zmdi-favorite-outline"></ion-icon>
 			<ion-icon class="zmdi zmdi-favorite"></ion-icon>
+			<ion-icon class="zmdi zmdi-favorite" (click)="share()"></ion-icon>
+			
 		</h3>
 
 		<ion-slides pager="true" loop="true">

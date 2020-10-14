@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-item-detail',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ItemDetailPage implements OnInit {
 FavoriteIcon = false;
-  constructor(private route: Router) { }
+  constructor(private route: Router, private socialSharing: SocialSharing) { }
 
   ngOnInit() {
   }
@@ -26,4 +27,22 @@ reviews() {
 seller_info() {
     this.route.navigate(['./seller-info']);
   } 
+
+  share(){
+
+
+// Check if sharing via email is supported
+this.socialSharing.canShareViaEmail().then(() => {
+  // Sharing via email is possible
+}).catch(() => {
+  // Sharing via email is not possible
+});
+
+// Share via email
+this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
+  // Success!
+}).catch(() => {
+  // Error!
+});
+  }
 }

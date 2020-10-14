@@ -15,6 +15,7 @@ import { TitlePageModule } from './title/title.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { APP_CONFIG, BaseAppConfig } from './app.config';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -22,12 +23,14 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,
+  ],
   entryComponents: [],
     imports: [
 	  BrowserModule, 
 	  IonicModule.forRoot(), 
       AppRoutingModule,
+      ComponentsModule,
       HttpClientModule,
       TranslateModule,   
       TitlePageModule,   
@@ -42,7 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     StatusBar,
     SplashScreen,
-
+    SocialSharing,
 
     { provide: APP_CONFIG, useValue: BaseAppConfig },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
@@ -63,5 +66,5 @@ import { GoogleMapsService } from './google-maps.service';
 import { ConnectivityServiceService } from './connectivity-service.service';
 import { Network } from '@ionic-native/network';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
-
+import { ComponentsModule } from './components/components.module';
 Amplify.configure(environment.amplify);

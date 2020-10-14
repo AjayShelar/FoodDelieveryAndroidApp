@@ -12,7 +12,9 @@ export class ItemPage implements OnInit {
 
   ngOnInit() {
   }
-
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
+  }
  cart() {
     this.route.navigate(['./cart']);
   } 

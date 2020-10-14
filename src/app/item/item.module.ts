@@ -15,7 +15,7 @@ import { ItemPage } from './item.page';
     FormsModule,
     IonicModule,
 	TranslateModule,    
-    ItemPageRoutingModule
+    ItemPageRoutingModule,
   ],
   declarations: [ItemPage]
 })

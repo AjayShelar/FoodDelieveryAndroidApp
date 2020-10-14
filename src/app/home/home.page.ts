@@ -9,6 +9,7 @@ import { GoogleMap , GoogleMaps,
   Environment} from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 import { NavController } from '@ionic/angular';
+import { ApiService } from '../api.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -17,12 +18,16 @@ import { NavController } from '@ionic/angular';
 export class HomePage implements OnInit {
   map: GoogleMap;
   address: string;
+  featured_rows = {};
+  categories = [];
+  banners = [];
 
   latitude: number;
   longitude: number;
   mode;
   constructor(private route: Router,
-    public navCtrl:NavController
+    public navCtrl:NavController,
+    public api:ApiService
     ) { 
 
       this.mode = JSON.parse(localStorage.getItem('mode'))['mode'];
@@ -33,6 +38,105 @@ export class HomePage implements OnInit {
       this.navCtrl.navigateRoot(['./home']);
   
       }
+
+      let obj = {
+        "Item": {
+            "pk": "HOMEPAGE",
+            "sk": "HOMEPAGE",
+            "data": {
+                "featured_foods": [
+                    {
+                        "image": "food.jpeg",
+                        "seller_name": "test seller",
+                        "title": "test product",
+                        "price": "123"
+                    }
+                ],
+                "categories": [
+                    {
+                        "title": "Food & Beverages",
+                        "image": "food.jpeg",
+                        "product_category": "food_and_beverages"
+                    },
+                    {
+                        "title": "Handicrafts",
+                        "image": "handicraft.jpg",
+                        "product_category": "handicrafts"
+                    },
+                    {
+                        "title": "Fresh Fruits",
+                        "image": "fruits.jpeg",
+                        "product_category": "fruits"
+                    },
+                    {
+                        "title": "Fresh Vegetables",
+                        "image": "vegetables.jpeg",
+                        "product_category": "vegetables"
+                    }
+                ],
+                "featured_fruits": [
+                    {
+                        "image": "food.jpeg",
+                        "seller_name": "test seller",
+                        "title": "test product",
+                        "price": "123"
+                    }
+                ],
+                "featured_vegetables": [
+                    {
+                        "image": "food.jpeg",
+                        "seller_name": "test seller",
+                        "title": "test product",
+                        "price": "123"
+                    }
+                ],
+                "banners": [
+                    {
+                        "image": "food.jpeg",
+                        "title": "Amazing Healthy Breakfast",
+                        "product_category": "food_and_beverages",
+                        "tags": [
+                            "breakfast",
+                            "healthy"
+                        ]
+                    },
+                    {
+                        "image": "handicraft.jpg",
+                        "title": "Indian Furniture",
+                        "product_category": "handicrafts",
+                        "tags": [
+                            "indian"
+                        ]
+                    }
+                ],
+                "featured_handicrafts": [
+                    {
+                        "image": "food.jpeg",
+                        "seller_name": "test seller",
+                        "title": "test product",
+                        "price": "123"
+                    }
+                ]
+            }
+        },
+        "ResponseMetadata": {
+            "RequestId": "2MB6EB8N0IG122N2GMB4B68J0JVV4KQNSO5AEMVJF66Q9ASUAAJG",
+            "HTTPStatusCode": 200,
+            "HTTPHeaders": {
+                "server": "Server",
+                "date": "Tue, 13 Oct 2020 22:17:09 GMT",
+                "content-type": "application/x-amz-json-1.0",
+                "content-length": "1429",
+                "connection": "keep-alive",
+                "x-amzn-requestid": "2MB6EB8N0IG122N2GMB4B68J0JVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                "x-amz-crc32": "4280683378"
+            },
+            "RetryAttempts": 0
+        }
+    }
+    this.featured_rows = obj['Item']['data'];
+    this.categories = obj['Item']['data']['categories'];
+    this.banners = obj['Item']['data']['banners'];
       
     }
 

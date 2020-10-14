@@ -17,10 +17,13 @@
 			</div>
 		</ion-title>
 	</ion-toolbar>
+	<!-- <app-items-filters></app-items-filters> -->
+	
 </ion-header>
 
 <ion-content>
 	<div class="item_container">
+		
 		<ion-row>
 			<ion-col size="6">
 				<div class="item" (click)="item_details()">
@@ -553,5 +556,19 @@
 				</div>
 			</ion-col>
 		</ion-row>
+	
 	</div>
+
 </ion-content>
+<ion-footer>
+	<ion-segment (ionChange)="segmentChanged($event)">
+		<ion-segment-button value="sort">
+		  <ion-label>Sort</ion-label>
+		</ion-segment-button>
+		<ion-segment-button value="filter">
+		  <ion-label>Filter</ion-label>
+		</ion-segment-button>
+	  </ion-segment>
+	  
+
+</ion-footer>

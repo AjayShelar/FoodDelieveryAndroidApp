@@ -8,66 +8,128 @@ import { TranslateService } from '@ngx-translate/core';
 import { MyEvent } from 'src/services/myevent.services';
 import { Constants } from 'src/models/contants.models';
 import { APP_CONFIG, AppConfig } from './app.config';
-
+import { Router } from '@angular/router';
+import { NewOrdersPage } from './new-orders/new-orders.page';
+import { menuItems } from '../assets/data/menu-items';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
+
 export class AppComponent implements OnInit {
   rtlSide = "left";
   mode = 'buyer';
+  private menu = menuItems;
+  show = true;
+  public pageList = [
+   
+    {
+        iconName: 'list', displayText: 'Food & Beverages', expanded: false, hasChild: true,
+        subOptions: [
+            {iconName: 'card', displayText: 'Chinese', url: '/list'},
+            {iconName: 'cash', displayText: 'Continental', url: '/list1'},
+            {iconName: 'clock', displayText: 'Thai', url: '/list2'},
+            {iconName: 'clock', displayText: 'Italian', url: '/list3'},
+            {iconName: 'clock', displayText: 'Snacks', url: '/list4'},
+            {iconName: 'clock', displayText: 'South Indian', url: '/list5'},
+            {iconName: 'clock', displayText: 'Rajasthani', url: '/list6'},
+        ]
+    },
+    {
+        iconName: 'flame', displayText: 'Handcrafted Products', expanded: false, hasChild: true,
+        subOptions: [
+            {iconName: 'flask', displayText: 'Textile products', url: '/item'},
+            {iconName: 'headset', displayText: 'Leather products', url: '/item'},
+            {iconName: 'infinite', displayText: 'Wooden products', url: '/item'},
+            {iconName: 'leaf', displayText: 'Metal products', url: '/item'},
+            {iconName: 'medal', displayText: 'Stone products', url: '/item'},
+            {iconName: 'medical', displayText: 'Paper/canvas', url: '/item'},
+            {iconName: 'nuclear', displayText: 'Others', url: '/item'}
+        ]
+    },
+    {
+        iconName: 'radio-button-on', displayText: 'Farm Fresh', expanded: false, hasChild: true,
+        subOptions: [
+            {iconName: 'map', displayText: 'Vegetables', url: '/list-sliding'},
+            {iconName: 'magnet', displayText: 'Fruits', url: '/list-reorder'},
+     
+        ]
+    },
+   
+];
+
+
+
   public selectedIndex = 0;
+  
+  // public appPages = [
+  //   {
+  //     title: 'home',
+  //     url: '/home',
+  //     icon: 'zmdi zmdi-home'
+  //   },
+  //   {
+  //     title: 'my_profile',
+  //     url: '/my-profile',
+  //     icon: 'zmdi zmdi-assignment-account'
+  //   },
+  //   {
+  //     title: 'my_orders',
+  //     url: '/my-orders',
+  //     icon: 'zmdi zmdi-shopping-cart'
+  //   },
+  //   {
+  //     title: 'offers',
+  //     url: '/offers',
+  //     icon: 'zmdi zmdi-label'
+  //   },
+  //   {
+  //     title: 'my_wishlist',
+  //     url: '/wishlist',
+  //     icon: 'zmdi zmdi-favorite'
+  //   },
+
+  //   {
+  //     title: 'about_us',
+  //     url: '/about-us',
+  //     icon: 'zmdi zmdi-assignment'
+  //   },
+
+  //   {
+  //     title: 'help_center',
+  //     url: '/contact-us',
+  //     icon: 'zmdi zmdi-comment-text'
+  //   },
+  //   // {
+  //   //   title: 'languges',
+  //   //   url: '/language',
+  //   //   icon: 'zmdi zmdi-globe'
+  //   // },
+  //   {
+  //     title: 'logout',
+  //     url: '/sign-in',
+  //     icon: 'zmdi zmdi-open-in-new'
+  //   },
+
+  // ];
   public appPages = [
     {
-      title: 'home',
-      url: '/home',
-      icon: 'zmdi zmdi-home'
-    },
-    {
-      title: 'my_profile',
-      url: '/my-profile',
-      icon: 'zmdi zmdi-assignment-account'
-    },
-    {
-      title: 'my_orders',
-      url: '/my-orders',
-      icon: 'zmdi zmdi-shopping-cart'
-    },
-    {
-      title: 'offers',
-      url: '/offers',
-      icon: 'zmdi zmdi-label'
-    },
-    {
-      title: 'my_wishlist',
-      url: '/wishlist',
-      icon: 'zmdi zmdi-favorite'
-    },
+      list_header: 'Client List',
+      icon: 'home',
+      subList: [{
+        subList_title: [
 
-    {
-      title: 'about_us',
-      url: '/about-us',
-      icon: 'zmdi zmdi-assignment'
-    },
+          {
+            title: 'a'
+          },
+          {
+            title: 'b'
+          }
+        ]
 
-    {
-      title: 'help_center',
-      url: '/contact-us',
-      icon: 'zmdi zmdi-comment-text'
-    },
-    // {
-    //   title: 'languges',
-    //   url: '/language',
-    //   icon: 'zmdi zmdi-globe'
-    // },
-    {
-      title: 'logout',
-      url: '/sign-in',
-      icon: 'zmdi zmdi-open-in-new'
-    },
-
-  ];
+      }]
+    }] 
 
 
   constructor(
@@ -76,7 +138,10 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     
-    private translate: TranslateService, private myEvent: MyEvent) {
+    private translate: TranslateService, private myEvent: MyEvent,
+    public router: Router,
+    
+    ) {
     this.initializeApp();
     this.myEvent.getLanguageObservable().subscribe(value => {
       this.navCtrl.navigateRoot(['./']);
@@ -84,7 +149,9 @@ export class AppComponent implements OnInit {
     });
     this.mode = 'buyer';
     localStorage.setItem('mode', JSON.stringify({mode:'buyer'}));
-
+    if(['/home', '/my-profile', '/wishlist', '/seller'].includes(this.router.url)){
+      this.show = false;
+    }
   }
 
   initializeApp() {
@@ -116,21 +183,31 @@ export class AppComponent implements OnInit {
       }
     }
   }
-
+  
+  isLevel1Shown(i){
+return false;
+  }
+  toggleLevel1(i){
+return
+  }
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+      this.selectedIndex = this.appPages.findIndex(page => page.list_header.toLowerCase() === path.toLowerCase());
     }
   }
   toggle(event){
     console.log(event);
     if(event.detail['checked']){
+      this.router.navigateByUrl('/');
+
       this.mode = 'seller';
       localStorage.setItem('mode', JSON.stringify({mode:'seller'}));
 
 
     }else{
+      
+      this.router.navigateByUrl('/');
       this.mode = 'buyer';
     localStorage.setItem('mode', JSON.stringify({mode:'buyer'}));
 

@@ -23,20 +23,37 @@
 			</div>
 			
 			<ion-content fullscreen>
-				<ion-list lines="none">
-					<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-						<ion-item mode="ios" detail="false" [routerDirection]="'root'" [routerLink]="[p.url]">
-							<div class="item_inner d-flex">
-								<ion-icon slot="start" [class]="p.icon"></ion-icon>
-								<h2>{{ p.title | translate}}</h2>
-							</div>
-						</ion-item>
-					</ion-menu-toggle>
+			        <custom-side-menu [menuList]="pageList"></custom-side-menu>
 
-					
-				</ion-list>
 			</ion-content>
 		</ion-menu>
-		<ion-router-outlet id="main-content"></ion-router-outlet>
+		<ion-router-outlet id="main-content">
+
+			<!-- <ion-tabs *ngIf="show">
+				<ion-tab-bar slot="bottom">
+				  <ion-tab-button tab="home">
+					<ion-icon name="home-outline"></ion-icon>
+					<ion-label>Home</ion-label>
+				  </ion-tab-button>
+				  <ion-tab-button tab="my-profile">
+					<ion-icon name="person-circle-outline"></ion-icon>
+					<ion-label>My Account</ion-label>
+				  </ion-tab-button>
+				  <ion-tab-button tab="wishlist">
+					<ion-icon name="heart-circle-outline"></ion-icon>
+					<ion-label>Favorite</ion-label>
+				  </ion-tab-button>
+				  <ion-tab-button tab="seller">
+					<ion-img src="assets/images/seller_icon.png"></ion-img>
+		
+					<ion-label>Seller</ion-label>
+				  </ion-tab-button>
+				  <ion-tab-button tab="cart">
+					<ion-icon name="cart-outline"></ion-icon>
+					<ion-label>Cart</ion-label>
+				  </ion-tab-button>
+				</ion-tab-bar>
+			  </ion-tabs>  -->
+		</ion-router-outlet>
 	</ion-split-pane>
 </ion-app>
