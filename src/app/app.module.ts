@@ -46,7 +46,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusBar,
     SplashScreen,
     SocialSharing,
-
+    Camera,
+    File,
     { provide: APP_CONFIG, useValue: BaseAppConfig },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
       AuthService,
@@ -66,5 +67,8 @@ import { GoogleMapsService } from './google-maps.service';
 import { ConnectivityServiceService } from './connectivity-service.service';
 import { Network } from '@ionic-native/network';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { Camera } from '@ionic-native/Camera/ngx';
+import { File } from '@ionic-native/file/ngx';
+
 import { ComponentsModule } from './components/components.module';
 Amplify.configure(environment.amplify);

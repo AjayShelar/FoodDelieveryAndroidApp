@@ -10,6 +10,12 @@
 </ion-header>
 
 <ion-content class="bg_color">
+	<ion-fab vertical="end" horizontal="end" slot="fixed">
+		<ion-fab-button (click)="addProduct()">
+		  <ion-icon name="add" ></ion-icon>
+		</ion-fab-button>
+	  </ion-fab>
+	
 	<ion-list lines="none">
 		<ion-item (click)="order_info()">
 			<div class="item_inner">

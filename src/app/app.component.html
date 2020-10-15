@@ -3,7 +3,7 @@
 	<ion-split-pane contentId="main-content">
 		<ion-menu contentId="main-content" type="overlay">
 			<div class="profile_box">
-				<h2>
+				<h2 (click)=profile()>
 					<!-- {{"hey" | translate}}, -->
 					<span class="first_name">Vinay</span>
 					<span class="last_name">Sharma</span>
@@ -29,12 +29,18 @@
 		</ion-menu>
 		<ion-router-outlet id="main-content">
 
-			<!-- <ion-tabs *ngIf="show">
+			<ion-tabs *ngIf="show">
 				<ion-tab-bar slot="bottom">
-				  <ion-tab-button tab="home">
+				  <ion-tab-button tab="home" *ngIf="mode==='buyer'">
 					<ion-icon name="home-outline"></ion-icon>
 					<ion-label>Home</ion-label>
 				  </ion-tab-button>
+
+				  <ion-tab-button tab="new-orders" *ngIf="mode==='seller'">
+					<ion-icon name="home-outline"></ion-icon>
+					<ion-label>Home</ion-label>
+				  </ion-tab-button>
+
 				  <ion-tab-button tab="my-profile">
 					<ion-icon name="person-circle-outline"></ion-icon>
 					<ion-label>My Account</ion-label>
@@ -43,17 +49,17 @@
 					<ion-icon name="heart-circle-outline"></ion-icon>
 					<ion-label>Favorite</ion-label>
 				  </ion-tab-button>
-				  <ion-tab-button tab="seller">
+				  <ion-tab-button tab="sellers">
 					<ion-img src="assets/images/seller_icon.png"></ion-img>
 		
-					<ion-label>Seller</ion-label>
+					<ion-label>Sellers</ion-label>
 				  </ion-tab-button>
 				  <ion-tab-button tab="cart">
 					<ion-icon name="cart-outline"></ion-icon>
 					<ion-label>Cart</ion-label>
 				  </ion-tab-button>
 				</ion-tab-bar>
-			  </ion-tabs>  -->
+			  </ion-tabs> 
 		</ion-router-outlet>
 	</ion-split-pane>
 </ion-app>

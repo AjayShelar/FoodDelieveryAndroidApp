@@ -11,14 +11,9 @@ export class ApiService {
   
   constructor(private  httpClient : HttpClient) { }
 postData(url, params): Observable<any> {
-  return this.httpClient.post<any>(
+  return this.httpClient.get<any>(
     url, params,
-    {
-      // headers: {
-      //   'Content-Type': 'application/json',
-      //   'x-api-key': API_KEY
-      // }
-    }
+   
   )
 }
 
@@ -28,22 +23,9 @@ public getHomepage(params): Observable<any> {
 }
 public createProduct(params): Observable<any> {
   let url = this.baseUrl + 'product';
-  return this.postData(url, {
-    "name": "poha",
-      "seller_pk": "5d884424-3932-4d62-bf07-2c925fa811b5",
-    "cost": 1234,
-    "product_category": "food_and_beverages",
-      "product_sub_category": "snacks",
-      "tags": ["breakfast", "lunch"],
-    "delivery_type": {
-      "type": "self-pick-up"
-    },
-    "order_type":{
-      "type": "preorder",
-      "preorder_days": 1
-    },
-    "images": ["image.png", "image.png"]
-  }
+  return  this.httpClient.post<any>(
+    url, params,
+   
   )
 }
 
@@ -107,6 +89,11 @@ public createSeller(params): Observable<any> {
 
 public getSeller(pk): Observable<any> {
   let url = this.baseUrl + 'seller?pk='+ pk;
+  return this.postData(url, {});
+}
+
+public getNewOrders(): Observable<any> {
+  let url = this.baseUrl + 'order';
   return this.postData(url, {});
 }
 

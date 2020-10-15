@@ -198,22 +198,44 @@ return
   }
   toggle(event){
     console.log(event);
+ this.splashScreen.show();
+//  document.location.href = 'index.html';
+
     if(event.detail['checked']){
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('new-orders');
 
       this.mode = 'seller';
       localStorage.setItem('mode', JSON.stringify({mode:'seller'}));
+      var initialHref = window.location.href;
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
 
+      let defaultLang = window.localStorage.getItem(Constants.KEY_DEFAULT_LANGUAGE);
+      this.globalize(defaultLang);
 
     }else{
       
       this.router.navigateByUrl('/');
       this.mode = 'buyer';
     localStorage.setItem('mode', JSON.stringify({mode:'buyer'}));
+    this.statusBar.styleDefault();
+    this.splashScreen.hide();
 
+    let defaultLang = window.localStorage.getItem(Constants.KEY_DEFAULT_LANGUAGE);
+    this.globalize(defaultLang);
 
 
     }
   }
- 
+
+  profile(){
+    this.router.navigateByUrl('my-profile');
+  }
+ getHomePage(){
+   console.log(this.router.url);
+if(this.router.url =='new-orders'){
+  return 'new-orders'
+}
+return 'home'
+ }
 }

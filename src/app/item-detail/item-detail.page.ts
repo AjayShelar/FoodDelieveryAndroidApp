@@ -10,7 +10,8 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 export class ItemDetailPage implements OnInit {
 FavoriteIcon = false;
   constructor(private route: Router, private socialSharing: SocialSharing) { }
-
+  product = {pk:'5d884424-3932-4d62-bf07-2c925fa811b5', 
+sk:'PRODUCT_2d8d0e78-3c7f-4310-b6e3-a3fe409fd126'};
   ngOnInit() {
   }
 
@@ -27,6 +28,13 @@ reviews() {
 seller_info() {
     this.route.navigate(['./seller-info']);
   } 
+  subscribe(product){
+    this.route.navigate([
+      "./subscribe",
+      
+      { product_pk:product.pk, product_sk:product.sk},
+    ]);
+  }
 
   share(){
 

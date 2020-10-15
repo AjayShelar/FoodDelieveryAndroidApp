@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>new-product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides #signupSlider pager>
+
+    <ion-slide>
+
+      <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+      <ion-list lines="none">
+        <!-- <div class="form"> -->
+          <form [formGroup]="slideOneForm">
+
+              <ion-item lines="none">
+                  <ion-label position="floating">Product Name</ion-label>
+                  <ion-input formControlName="Name" type="text" [class.invalid]="!slideOneForm.controls.Name.valid && (slideOneForm.controls.Name.dirty || submitAttempt)"></ion-input>
+              </ion-item>
+
+              <ion-item *ngIf="!slideOneForm.controls.Name.valid  && (slideOneForm.controls.Name.dirty || submitAttempt)">
+                  <p>Please enter a valid name.</p>
+              </ion-item>
+
+              <ion-item lines="none">
+                  <ion-label position="floating">Product Category</ion-label>
+                  <ion-select [class.invalid]="!slideOneForm.controls.category.valid && (slideOneForm.controls.category.dirty || submitAttempt)" formControlName="category">
+                    <ion-select-option value="public" checked="true">Food & Beverages</ion-select-option>
+                    <ion-select-option value="friends">Handicrafts</ion-select-option>
+                    <ion-select-option value="friends">Fresh Fruits</ion-select-option>
+                    <ion-select-option value="friends">Fresh Vegetables</ion-select-option>
+                </ion-select>
+                </ion-item>
+
+              <ion-item *ngIf="!slideOneForm.controls.category.valid  && (slideOneForm.controls.Name.dirty || submitAttempt)">
+                  <p>Please enter a valid Category.</p>
+              </ion-item>
+
+              <ion-item lines="none">
+                  <ion-label position="floating">Product sub category</ion-label>
+                  <ion-select [class.invalid]="!slideOneForm.controls.sub_category.valid && (slideOneForm.controls.sub_category.dirty || submitAttempt)" formControlName="sub_category">
+                      <ion-select-option value="public" checked="true">Snacks</ion-select-option>
+                      <ion-select-option value="friends">Lunch</ion-select-option>
+                      <ion-select-option value="friends">Dinner</ion-select-option>
+                      <ion-select-option value="friends">Furniture</ion-select-option>
+                      <ion-select-option value="friends">Green Veg</ion-select-option>
+                      <ion-select-option value="friends">Indian</ion-select-option>
+                  </ion-select>
+              </ion-item>
+
+              <ion-item *ngIf="!slideOneForm.controls.sub_category.valid  && (slideOneForm.controls.sub_category.dirty || submitAttempt)">
+                  <p>Please enter a valid sub category.</p>
+              </ion-item>
+
+          </form>
+<!-- </div> -->
+      </ion-list>
+
+    </ion-slide>
+
+    <ion-slide>
+
+      <ion-list lines="none">
+
+          <form [formGroup]="slideTwoForm">
+
+              <ion-item lines="none">
+                  <ion-label position="floating">Cost</ion-label>
+                  <ion-input [class.invalid]="!slideTwoForm.controls.cost.valid && (slideTwoForm.controls.cost.dirty || submitAttempt)" formControlName="cost" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item *ngIf="slideTwoForm.controls.cost.pending">
+                  <p>Checking cost...</p>
+              </ion-item>
+
+              <ion-item *ngIf="!slideTwoForm.controls.cost.valid && !slideTwoForm.controls.cost.pending && (slideTwoForm.controls.cost.dirty || submitAttempt)">
+                  <p>Sorry, that cost can not be used!</p>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="floating">Delivery type</ion-label>
+                  <ion-select [class.invalid]="!slideTwoForm.controls.delivery_type.valid && (slideTwoForm.controls.delivery_type.dirty || submitAttempt)" formControlName="delivery_type">
+                      <ion-select-option value="public" checked="true">Self pick-up</ion-select-option>
+                      <ion-select-option value="friends">home-delievery</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <!-- <ion-item>
+                <ion-label position="floating">Order type</ion-label>
+                <ion-select [class.invalid]="!slideTwoForm.controls.order_type.valid && (slideTwoForm.controls.order_type.dirty || submitAttempt)" formControlName="order_type">
+                    <ion-select-option value="public" checked="true">Pre-order</ion-select-option>
+                    <ion-select-option value="friends">home-delievery</ion-select-option>
+                </ion-select>
+            </ion-item> -->
+
+              <ion-item>
+                  <ion-label position="floating">Tags</ion-label>
+                  <ion-textarea formControlName="tags"></ion-textarea>
+              </ion-item>
+              <ion-row>
+    
+                <ion-col><ion-button color="primary" (click)="pickImage()">Upload Picture</ion-button></ion-col>
+              
+                </ion-row>
+          </form>
+
+      </ion-list>
+
+      <ion-button expand="full" color="primary" (click)="save()">Add Product!</ion-button>
+
+    </ion-slide>
+
+  </ion-slides>
+
+ 
+</ion-content>

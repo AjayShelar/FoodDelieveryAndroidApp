@@ -136,6 +136,7 @@ export class HomePage implements OnInit {
     }
     this.featured_rows = obj['Item']['data'];
     this.categories = obj['Item']['data']['categories'];
+    console.log(this.categories);
     this.banners = obj['Item']['data']['banners'];
       
     }
@@ -150,12 +151,22 @@ export class HomePage implements OnInit {
  item_details() {
     this.route.navigate(['./item-detail']);
   } 
- item() {
-    this.route.navigate(['./item']);
+ item(product_category) {
+    // this.route.navigate(['./item']);
+    this.route.navigate([
+      "./item",
+      
+      { product_category:product_category},
+    ]);
   } 
  search() {
     this.route.navigate(['./search']);
   } 
+  notifications() {
+    this.route.navigate(['./notifications']);
+  } 
+
+
  cart() {
     this.route.navigate(['./cart']);
   } 

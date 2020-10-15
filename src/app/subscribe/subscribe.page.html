@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>subscribe</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bg_color">
+	
+	
+	<ion-list lines="none">
+		<ion-item>
+			<div class="item_inner">
+				<div class="item_info"> 
+					<div class="item_header d-flex">
+						<div class="img_box center_img">
+							<img src="assets/images/item_4.png" class="crop_img">
+						</div>
+						<div class="text_box">
+							<h2>Black Cotton Top</h2>
+							<h3>Pooja Gaikwad | Western Express Highway</h3>
+							<h4 class="d-flex">
+								ordered_on 14 Jun, 11:40
+								<span class="end ion-text-end">
+									order_id 224154
+								</span>
+							</h4> 
+						</div>
+					</div>
+					<div class="detail">
+                <ion-icon name="remove-circle" (click)="decrement()">
+                  </ion-icon>
+                  {{currentNumber}}
+                  <ion-icon name="add-circle" (click)="increment()">
+                    </ion-icon>
+                  <span class="end">
+                    <span style='font-size:19px;'>&#8377;</span>
+                    
+                    14.00
+                  </span>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+		<ion-item>
+			<div class="item_inner">
+				<div class="item_info">
+					<div class="item_header d-flex">
+						
+						<div class="text_box">
+              <ion-item>
+                <ion-label>Pick a schedule</ion-label>
+                <ion-select placeholder="Select One">
+                  <ion-select-option value="f">Daily</ion-select-option>
+                  <ion-select-option value="m">Weekly</ion-select-option>
+                  <ion-select-option value="m">Alternate Days</ion-select-option>
+                  <ion-select-option value="m">Monthly</ion-select-option>
+                </ion-select>
+              </ion-item>
+						</div>
+					</div>
+					<div class="detail">
+						<ion-row>
+						  <ion-item>
+                Subscription Start Date
+                <ion-datetime  display-timezone="Asia/Kolkata">
+                  
+                </ion-datetime>
+              </ion-item>
+						</ion-row>
+					</div>
+				</div>
+			</div>
+		</ion-item>
+		
+   
+    
+  
+	</ion-list>
+
+
+    
+     
+        
+      
+</ion-content>
+<ion-footer class="ion-no-border">
+	<div class="form">
+		
+	
+		<h2 class="d-flex" (click)="select_address()">
+			Start Subscription
+			
+		</h2>
+	</div>
+</ion-footer>

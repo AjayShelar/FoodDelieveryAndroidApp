@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class CartPage implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+    public api: ApiService
+    ) { }
 
   ngOnInit() {
   }

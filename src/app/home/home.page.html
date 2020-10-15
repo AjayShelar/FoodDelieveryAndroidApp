@@ -4,26 +4,34 @@
 <ion-toolbar>
 	<ion-buttons slot="start">
 			<ion-menu-button autoHide="false"></ion-menu-button>
+		
+		<span>GharSey</span>
 	</ion-buttons>
-	<ion-title>
-		GharSey
-	</ion-title>
+
 	
 	<ion-buttons  (click)="search()" slot="end">
 			<ion-icon slot="icon-only" name="search-outline"></ion-icon>
 	
 	  </ion-buttons>
-	<ion-buttons (click)="clickedStar()" slot="end">
+<ion-buttons (click)="notifications()" slot="end">
 			<ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
 	
 	  </ion-buttons>
+	 	<!--  <ion-buttons (click)="cart()" slot="end">
+		<ion-icon class="zmdi zmdi-favorite ion-text-start"></ion-icon>
+  </ion-buttons>
+	  <ion-buttons (click)="cart()" slot="end">
+		<ion-icon class="zmdi zmdi-mall ion-text-start"></ion-icon>
+		<ion-badge>2</ion-badge>
+  </ion-buttons> -->
+	
   </ion-toolbar>
 	
 </ion-header> 
 
 <ion-content fullscreen>
 	<div class="category_row"> 
-		<div *ngFor="let category of categories" class="category fashion" (click)="item()">
+		<div *ngFor="let category of categories" class="category fashion" (click)="item(category.product_category)">
 			<div class="img_box center_img">
 				<h2>{{category.title}}</h2>
 				<img src="{{category.image}}" class="crop_img">
@@ -43,7 +51,10 @@
 	</div>
 
 	<div class="items_container" >
-		<h2>Featured foods</h2>
+		<h2 class="d-flex" (click)="seller_info()">Featured Foods
+			 <!-- <span class="end" >view all</span> -->
+			</h2>
+
 		<div class="items_row" >
 			<div class="item" (click)="item_details()" *ngFor="let item of featured_rows['featured_foods']">
 				<div class="item_img center_img">
@@ -66,7 +77,84 @@
 		</div>
 	</div>
 
+	<div class="items_container" >
+		<h2 class="d-flex" (click)="seller_info()">Featured Fruits
+			 <!-- <span class="end" >view all</span> -->
+			</h2>
 
+		<div class="items_row" >
+			<div class="item" (click)="item_details()" *ngFor="let item of featured_rows['featured_fruits']">
+				<div class="item_img center_img">
+					<img src="{{item.image}}" class="crop_img">
+				</div>
+				<div class="item_details">
+					<h3>{{item.title}}</h3>
+					<h4>{{item.seller_name}}</h4>
+					<h5 class="d-flex">
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>
+					{{item.price}}</span>
+						<ion-badge class="end">
+							4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+						</ion-badge>
+					</h5>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+
+	<div class="items_container" >
+		<h2 class="d-flex" (click)="seller_info()">Featured Vegetables <span class="end" >view all</span></h2>
+
+		<div class="items_row" >
+			<div class="item" (click)="item_details()" *ngFor="let item of featured_rows['featured_vegetables']">
+				<div class="item_img center_img">
+					<img src="{{item.image}}" class="crop_img">
+				</div>
+				<div class="item_details">
+					<h3>{{item.title}}</h3>
+					<h4>{{item.seller_name}}</h4>
+					<h5 class="d-flex">
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>
+					{{item.price}}</span>
+						<ion-badge class="end">
+							4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+						</ion-badge>
+					</h5>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+
+	<div class="items_container" >
+		<h2 class="d-flex" (click)="seller_info()">Featured Handicrafts
+			 <!-- <span class="end" >view all</span> -->
+			</h2>
+
+		<div class="items_row" >
+			<div class="item" (click)="item_details()" *ngFor="let item of featured_rows['featured_handicrafts']">
+				<div class="item_img center_img">
+					<img src="{{item.image}}" class="crop_img">
+				</div>
+				<div class="item_details">
+					<h3>{{item.title}}</h3>
+					<h4>{{item.seller_name}}</h4>
+					<h5 class="d-flex">
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>
+					{{item.price}}</span>
+						<ion-badge class="end">
+							4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
+						</ion-badge>
+					</h5>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
 	<div class="items_container">
 		<h2>Featured Products</h2>
 		<div class="items_row">
@@ -225,7 +313,7 @@
 		</div>
 	</div>
 
-
+	
 		
 	
 	

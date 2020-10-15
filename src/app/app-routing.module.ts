@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',  redirectTo: 'sign-in', pathMatch: 'full'
+    path: '',  redirectTo: 'home', pathMatch: 'full'
   },
 	
   {
@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'notifcations',
+    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
   {
     path: 'item',
@@ -119,6 +123,10 @@ const routes: Routes = [
     loadChildren: () => import('./new-orders/new-orders.module').then( m => m.NewOrdersPageModule)
   },
   {
+    path: 'new-product',
+    loadChildren: () => import('./new-product/new-product.module').then( m => m.NewProductPageModule)
+  },
+  {
     path: 'order-info',
     loadChildren: () => import('./order-info/order-info.module').then( m => m.OrderInfoPageModule)
   },
@@ -153,6 +161,22 @@ const routes: Routes = [
   {
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
+  {
+    path: 'new-product',
+    loadChildren: () => import('./new-product/new-product.module').then( m => m.NewProductPageModule)
+  },
+  {
+    path: 'sellers',
+    loadChildren: () => import('./nearby-sellers/nearby-sellers.module').then( m => m.NearbySellersPageModule)
+  },
+  {
+    path: 'subscribe',
+    loadChildren: () => import('./subscribe/subscribe.module').then( m => m.SubscribePageModule)
   },
 ];
 
