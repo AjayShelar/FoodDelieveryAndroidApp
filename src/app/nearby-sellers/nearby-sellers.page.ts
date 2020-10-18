@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nearby-sellers',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NearbySellersPage implements OnInit {
 
-  constructor() { }
+  constructor(public route: Router) { }
 
   ngOnInit() {
   }
-
+  search() {
+    this.route.navigate(['./search']);
+  } 
+  notifications() {
+    this.route.navigate(['./notifications']);
+  } 
 }

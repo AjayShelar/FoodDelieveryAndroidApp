@@ -78,10 +78,10 @@
 </ion-content>
 <ion-footer>
 	<ion-segment (ionChange)="segmentChanged($event)">
-		<ion-segment-button value="sort">
+		<ion-segment-button value="sort"  (click)="presentPopover($event)">
 		  <ion-label>Sort</ion-label>
 		</ion-segment-button>
-		<ion-segment-button value="filter">
+		<ion-segment-button value="filter" (click)="presentPopover($event)">
 		  <ion-label>Filter</ion-label>
 		</ion-segment-button>
 	  </ion-segment>

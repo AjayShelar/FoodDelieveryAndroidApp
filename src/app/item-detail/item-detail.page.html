@@ -70,16 +70,20 @@
 		</h4>
 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
 	</div>
-
+<ion-item>
 	<ion-button size="large" shape="full" class="btn">
 		<ion-icon class="zmdi zmdi-mall ion-text-start"></ion-icon>
 		{{'add_to_cart' | translate}}
 	</ion-button>
-
-	<ion-button size="large" shape="full" class="btn" (click)="subscribe(product)">
+</ion-item>
+	
+<ion-item>
+	<ion-button size="large" color="green" shape="full" class="btn" (click)="subscribe(product)">
 		<ion-icon class="zmdi zmdi-mall ion-text-start"></ion-icon>
 		Subscribe
 	</ion-button>
+</ion-item>
+	
 
 	<div class="more_by_seller">
 		<h2 class="d-flex" (click)="seller_info()">{{'more_by' | translate}} &nbsp;<strong>{{'seller' | translate}}</strong><span class="end ">{{'view_all' | translate}}</span></h2>

@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class SubscribePage implements OnInit {
   product;
-  private currentNumber = 0;
+  currentNumber = 0;
   constructor(public route:ActivatedRoute,
     public router: Router,
     public api: ApiService
@@ -25,11 +25,11 @@ export class SubscribePage implements OnInit {
 
   ngOnInit() {
   }
-  private increment () {
+   increment () {
     this.currentNumber++;
   }
   
-  private decrement () {
+   decrement () {
     this.currentNumber--;
   }
   subscribe(){

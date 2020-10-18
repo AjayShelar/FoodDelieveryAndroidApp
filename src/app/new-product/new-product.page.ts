@@ -28,9 +28,9 @@ export class NewProductPage implements OnInit {
    constructor(public formBuilder: FormBuilder
     ,
     public api: ApiService,
-    private camera: Camera,
+    public camera: Camera,
 public actionSheetController: ActionSheetController,
-private file: File) {
+public file: File) {
 
     this.slideOneForm = formBuilder.group({
         category: ['',],

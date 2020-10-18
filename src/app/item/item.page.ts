@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PopoverController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { PopoverComponent } from '../popover/popover.component';
 
 @Component({
   selector: 'app-item',
@@ -17,8 +19,8 @@ export class ItemPage implements OnInit {
 category_items = [];
   constructor(private router: Router,
     public route: ActivatedRoute,
-    public api: ApiService
-
+    public api: ApiService,
+    public popoverController: PopoverController
   ) {
     this.route.params.subscribe(param => {
       console.log(param);
@@ -39,6 +41,15 @@ category_items = [];
     });
   }
 
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
   ngOnInit() {
   }
   segmentChanged(ev: any) {

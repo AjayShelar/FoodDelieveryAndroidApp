@@ -100,7 +100,8 @@
               </ion-item>
               <ion-row>
     
-                <ion-col><ion-button color="primary" (click)="pickImage()">Upload Picture</ion-button></ion-col>
+                <ion-col><ion-button color="primary" (click)="pickImage(camera.PictureSourceType.PHOTOLIBRARY)">Upload Picture</ion-button></ion-col>
+                <ion-col><ion-button color="dark" (click)="pickImage(camera.PictureSourceType.CAMERA)">Take Picture</ion-button></ion-col>
               
                 </ion-row>
           </form>

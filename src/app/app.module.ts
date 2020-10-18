@@ -25,7 +25,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent,
   ],
-  entryComponents: [],
+  entryComponents: [PopoverComponent],
     imports: [
 	  BrowserModule, 
 	  IonicModule.forRoot(), 
@@ -33,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       ComponentsModule,
       HttpClientModule,
       TranslateModule,   
-      TitlePageModule,   
+      TitlePageModule,  
+      PopoverModule, 
       TranslateModule.forRoot({
         loader: {
         provide: TranslateLoader,
@@ -71,4 +72,6 @@ import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 import { ComponentsModule } from './components/components.module';
+import { PopoverComponent } from './popover/popover.component';
+import { PopoverModule } from './popover/popover.module';
 Amplify.configure(environment.amplify);
