@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NewProductPageRoutingModule } from './new-product-routing.module';
-import { Camera } from '@ionic-native/Camera/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { NewProductPage } from './new-product.page';
 

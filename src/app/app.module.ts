@@ -68,7 +68,7 @@ import { GoogleMapsService } from './google-maps.service';
 import { ConnectivityServiceService } from './connectivity-service.service';
 import { Network } from '@ionic-native/network';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
-import { Camera } from '@ionic-native/Camera/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 import { ComponentsModule } from './components/components.module';

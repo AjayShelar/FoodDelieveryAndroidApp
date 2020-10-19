@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Camera, CameraOptions } from '@ionic-native/Camera/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ActionSheetController } from '@ionic/angular';
 import { File } from '@ionic-native/file/ngx';
 import { FormBuilder, FormGroup } from '@angular/forms';
