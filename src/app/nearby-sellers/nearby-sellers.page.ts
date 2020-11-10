@@ -15,6 +15,10 @@ export class NearbySellersPage implements OnInit {
   search() {
     this.route.navigate(['./search']);
   } 
+  viewSellerProfile(seller_pk){
+    this.route.navigate(['./seller-info']);
+
+  }
   notifications() {
     this.route.navigate(['./notifications']);
   } 

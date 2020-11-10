@@ -1,17 +1,24 @@
 
 <ion-header>
 	
-<ion-toolbar>
-	<ion-buttons slot="start">
+<ion-toolbar color="warning">
+	<ion-buttons slot="start" >
 			<ion-menu-button autoHide="false"></ion-menu-button>
 		
-		<span>GharSey</span>
+	
 	</ion-buttons>
 
 	
-	<ion-buttons  (click)="search()" slot="end">
-			<ion-icon slot="icon-only" name="search-outline"></ion-icon>
-	
+	<ion-buttons (click)="add_address()"
+	 slot="start">
+			<!-- <ion-icon slot="icon-only" name="search-outline"></ion-icon> -->
+			<span >
+
+				{{defaultLocation}}
+			</span>
+			<i class="zmdi zmdi-edit"  >
+				
+			</i>
 	  </ion-buttons>
 <ion-buttons (click)="notifications()" slot="end">
 			<ion-icon slot="icon-only" name="notifications-outline"></ion-icon>

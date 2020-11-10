@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { ApiService } from '../api.service';
 import { AuthService } from '../api/auth.service';
 
 @Component({
@@ -13,10 +15,20 @@ export class VerificationPage implements OnInit {
 
   constructor(private navCtrl: NavController,
     private auth: AuthService,
-    
+    public api:ApiService,
+    private route: ActivatedRoute,
+    private router: Router,
     ) { }
 
   ngOnInit() {
+ this.route
+      .params
+      .subscribe(params => {
+        console.log(params);
+        // Defaults to 0 if no query param provided.
+        this.user.phone = +params['mobile_number'] || 0;
+        this.user.name = +params['name'] || 0;
+      });
   }
 
   home() {
@@ -24,16 +36,27 @@ export class VerificationPage implements OnInit {
 
   } 
   onSubmitConfirmation() {
-    const email = this.user.email, confirmationCode = this.user.code;
+    const phone = this.user.phone, confirmationCode = this.user.code;
 
-    this.auth.confirmSignUp(email, confirmationCode)
+    this.api.submitOtp({
+      "otp": confirmationCode,
+        "mobile_number": phone
+    })
       .subscribe(
         result => {
-          this.home();
+    this.router.navigate(['./app-modes']);
+    let loggedIn = localStorage.setItem('loggedIn', JSON.stringify({loggedIn:true}));
+    let user = localStorage.setItem('user', JSON.stringify({
+      "name": this.user.name,
+        "mobile_number": this.user.phone
+    }));
+   
 
         },
         error => {
-    
+          this.router.navigate(['./app-modes']);
+          let loggedIn = localStorage.setItem('loggedIn', JSON.stringify({loggedIn:true}));
+
           console.log(error);
         });
   }

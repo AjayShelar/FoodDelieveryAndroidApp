@@ -1,76 +1,146 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { TitlePage } from '../title/title.page';  
-import { LoadingController, ModalController, Platform } from '@ionic/angular';
-import { BaseArrayClass, Geocoder, GeocoderResult, GoogleMap, GoogleMaps, GoogleMapsEvent, ILatLng, Marker } from '@ionic-native/google-maps';
+//IMPORT THE REQUIRED MODULES.
+
+import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { NavigationExtras } from '@angular/router';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { NavController } from '@ionic/angular';
+
+declare var google;
 @Component({
   selector: 'app-add-address',
   templateUrl: './add-address.page.html',
   styleUrls: ['./add-address.page.scss'],
 })
 export class AddAddressPage implements OnInit {
-  map: GoogleMap;
+  @ViewChild('map',  {static: false}) mapElement: ElementRef;
+  map: any;
+  address:string;
+  lat: string;
+  long: string;  
+  autocomplete: { input: string; };
+  autocompleteItems: any[];
+  location: any;
+  placeid: any;
+  GoogleAutocomplete: any;
 
-  constructor(private modalController: ModalController,
-    public loadingCtrl: LoadingController, private platform: Platform) { }
+ 
+  constructor(
+    private geolocation: Geolocation,
+    private nativeGeocoder: NativeGeocoder,    
+    public zone: NgZone,
+    public navCtrl:NavController
+  ) {
+    this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
+    this.autocomplete = { input: '' };
+    this.autocompleteItems = [];
+  }
+ 
+  //LOAD THE MAP ONINIT.
+  ngOnInit() {
+    this.loadMap();    
+  }
 
-  title(){
-    this.modalController.create({component:TitlePage}).then((modalElement)=>
-    {
-      modalElement.present();
+  //LOADING THE MAP HAS 2 PARTS.
+  loadMap() {
+    
+    //FIRST GET THE LOCATION FROM THE DEVICE.
+    this.geolocation.getCurrentPosition().then((resp) => {
+      let latLng = new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude);
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      } 
+      
+      //LOAD THE MAP WITH THE PREVIOUS VALUES AS PARAMETERS.
+      this.getAddressFromCoords(resp.coords.latitude, resp.coords.longitude); 
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions); 
+      this.map.addListener('tilesloaded', () => {
+        console.log('accuracy',this.map, this.map.center.lat());
+        this.getAddressFromCoords(this.map.center.lat(), this.map.center.lng())
+        this.lat = this.map.center.lat()
+        this.long = this.map.center.lng()
+      }); 
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+  }
+
+  
+  getAddressFromCoords(lattitude, longitude) {
+    console.log("getAddressFromCoords "+lattitude+" "+longitude);
+    let options: NativeGeocoderOptions = {
+      useLocale: true,
+      maxResults: 5    
+    }; 
+    this.nativeGeocoder.reverseGeocode(lattitude, longitude, options)
+      .then((result: NativeGeocoderResult[]) => {
+        this.address = "";
+        let responseAddress = [];
+        for (let [key, value] of Object.entries(result[0])) {
+          if(value.length>0)
+          responseAddress.push(value); 
+        }
+        responseAddress.reverse();
+        for (let value of responseAddress) {
+          this.address += value+", ";
+        }
+        this.address = this.address.slice(0, -2);
+      })
+      .catch((error: any) =>{ 
+        this.address = "Address Not Available!";
+      }); 
+  }
+
+  //FUNCTION SHOWING THE COORDINATES OF THE POINT AT THE CENTER OF THE MAP
+  ShowCords(){
+    alert('lat' +this.lat+', long'+this.long )
+  }
+  
+  //AUTOCOMPLETE, SIMPLY LOAD THE PLACE USING GOOGLE PREDICTIONS AND RETURNING THE ARRAY.
+  UpdateSearchResults(){
+    if (this.autocomplete.input == '') {
+      this.autocompleteItems = [];
+      return;
     }
-    )
-  } 
-
-
-  map1: GoogleMap;
-  map2: GoogleMap;
-  loading: any;
-  @ViewChild('search_address') search_address: ElementRef;
-
-
-  async ngOnInit() {
-    // Since ngOnInit() is executed before `deviceready` event,
-    // you have to wait the event.
-    await this.platform.ready();
-    await this.loadMap1();
-  }
-
-  loadMap1() {
-    console.log(this.search_address);
-    (this.search_address as any).value = '1600 Amphitheatre Parkway, Mountain View, CA 94043, United States';
-    this.map1 = GoogleMaps.create('map_canvas1');
-  }
-
-  async onButton1_click(event) {
-    this.loading = await this.loadingCtrl.create({
-      message: 'Please wait...'
+    this.GoogleAutocomplete.getPlacePredictions({ input: this.autocomplete.input },
+    (predictions, status) => {
+      this.autocompleteItems = [];
+      this.zone.run(() => {
+        predictions.forEach((prediction) => {
+          this.autocompleteItems.push(prediction);
+        });
+      });
     });
-    await this.loading.present();
-    this.map1.clear();
-
-    // Address -> latitude,longitude
-    Geocoder.geocode({
-      "address": 'Универмаг белгород'
-    })
-    .then((results: GeocoderResult[]) => {
-      console.log(results);
-      this.loading.dismiss();
-
-      if (results.length > 0) {
-        let marker: Marker = this.map1.addMarkerSync({
-          'position': results[0].position,
-          'title':  JSON.stringify(results[0].position)
-        });
-        this.map1.animateCamera({
-          'target': marker.getPosition(),
-          'zoom': 17
-        });
-
-        marker.showInfoWindow();
-      } else {
-        alert("Not found");
+  }
+  
+  //wE CALL THIS FROM EACH ITEM.
+  SelectSearchResult(item) {
+    ///WE CAN CONFIGURE MORE COMPLEX FUNCTIONS SUCH AS UPLOAD DATA TO FIRESTORE OR LINK IT TO SOMETHING
+    // alert(JSON.stringify(item))    
+    // JSON.stringify(item)  
+    localStorage.setItem('location', JSON.stringify(item));
+    this.placeid = item.place_id
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+          location: JSON.stringify(item['description']),
       }
-    });
+  };
+    this.navCtrl.navigateBack('/home', navigationExtras );
+
+  }
+  
+  
+  //lET'S BE CLEAN! THIS WILL JUST CLEAN THE LIST WHEN WE CLOSE THE SEARCH BAR.
+  ClearAutocomplete(){
+    this.autocompleteItems = []
+    this.autocomplete.input = ''
+  }
+ 
+  //sIMPLE EXAMPLE TO OPEN AN URL WITH THE PLACEID AS PARAMETER.
+  GoTo(){
+    return window.location.href = 'https://www.google.com/maps/search/?api=1&query=Google&query_place_id='+this.placeid;
   }
 
 }

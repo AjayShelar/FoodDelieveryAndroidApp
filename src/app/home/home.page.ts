@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GoogleMap , GoogleMaps,
   GoogleMapsEvent,
   GoogleMapOptions,
@@ -7,17 +7,20 @@ import { GoogleMap , GoogleMaps,
   MarkerOptions,
   Marker,
   Environment} from '@ionic-native/google-maps';
-import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import {  NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 import { NavController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+declare var google;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  map: GoogleMap;
-  address: string;
+
   featured_rows = {};
   categories = [];
   banners = [];
@@ -25,10 +28,28 @@ export class HomePage implements OnInit {
   latitude: number;
   longitude: number;
   mode;
+
+  @ViewChild('map',  {static: false}) mapElement: ElementRef;
+  map: any;
+  address:string;
+  lat: string;
+  long: string;  
+  autocomplete: { input: string; };
+  autocompleteItems: any[];
+  location: any;
+  placeid: any;
+  GoogleAutocomplete: any;
+  defaultLocation='Select Location';
   constructor(private route: Router,
+    private activtated_route:ActivatedRoute,
     public navCtrl:NavController,
-    public api:ApiService
+    public api:ApiService,
+    private geolocation: Geolocation,
+    private nativeGeocoder: NativeGeocoder,    
+    public zone: NgZone,
     ) { 
+
+
 
       this.mode = JSON.parse(localStorage.getItem('mode'))['mode'];
       if(this.mode ==='seller'){
@@ -38,6 +59,20 @@ export class HomePage implements OnInit {
       this.navCtrl.navigateRoot(['./home']);
   
       }
+
+      console.log(JSON.parse(localStorage.getItem('location')));
+      // if(JSON.parse(localStorage.getItem('location'))){
+      // this.defaultLocation = JSON.parse(localStorage.getItem('location'))
+
+      // }
+
+      this.activtated_route.queryParams.subscribe(params => {
+      console.log(params);
+if(params['location']){
+  this.defaultLocation = JSON.parse(params["location"]);
+
+}
+    });
 
       let obj = {
         "Item": {
@@ -142,10 +177,28 @@ export class HomePage implements OnInit {
     }
 
     ionViewDidLoad() {
-      this.loadMap();
+      // console.log(JSON.parse(localStorage.getItem('location')));
+      // if(JSON.parse(localStorage.getItem('location'))){
+      // this.defaultLocation = JSON.parse(localStorage.getItem('location'))
+  
+      // }
+      
+
     }
   ngOnInit() {
-   
+
+    // console.log(JSON.parse(localStorage.getItem('location')));
+    // if(JSON.parse(localStorage.getItem('location'))){
+    // this.defaultLocation = JSON.parse(localStorage.getItem('location'))['description'];
+
+    // }
+    this.activtated_route.queryParams.subscribe(params => {
+      console.log(params);
+if(params['location']){
+  this.defaultLocation = JSON.parse(params["location"]);
+
+}
+    });
   }
 
  item_details() {
@@ -170,40 +223,14 @@ export class HomePage implements OnInit {
  cart() {
     this.route.navigate(['./cart']);
   } 
-  loadMap() {
+  
+  
+  
+  
+  add_address() {
+    this.route.navigate(['./add-address']);
+  } 
 
-    // This code is necessary for browser
-    Environment.setEnv({
-      'API_KEY_FOR_BROWSER_RELEASE': '(your api key for `https://`)',
-      'API_KEY_FOR_BROWSER_DEBUG': '(your api key for `http://`)'
-    });
-
-    let mapOptions: GoogleMapOptions = {
-      camera: {
-         target: {
-           lat: 43.0741904,
-           lng: -89.3809802
-         },
-         zoom: 18,
-         tilt: 30
-       }
-    };
-
-    this.map = GoogleMaps.create('map_canvas', mapOptions);
-
-    let marker: Marker = this.map.addMarkerSync({
-      title: 'Ionic',
-      icon: 'blue',
-      animation: 'DROP',
-      position: {
-        lat: 43.0741904,
-        lng: -89.3809802
-      }
-    });
-    marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-      alert('clicked');
-    });
-  }
 }
 
    

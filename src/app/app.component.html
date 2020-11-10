@@ -1,42 +1,70 @@
 <ion-app [dir]="rtlSide">
 
 	<ion-split-pane contentId="main-content">
-		<ion-menu contentId="main-content" type="overlay">
-			<div class="profile_box">
+		<ion-menu *ngIf="showSideMenu" contentId="main-content"   color="warning" type="overlay">
+			<div class="profile_box" color="warning">
 				<h2 (click)=profile()>
 					<!-- {{"hey" | translate}}, -->
 					<span class="first_name">Vinay</span>
 					<span class="last_name">Sharma</span>
 
 				</h2>
-				<div style="font-size: 20px; color: black;">
+				<!-- <div style="font-size: 20px; color: black;">
 					<p><i class="zmdi zmdi-pin animated infinite wobble zmdi-hc-fw"></i> wobble</p>
 					<ion-item>
 						<ion-label *ngIf="mode==='seller'">Seller</ion-label>
 						<ion-label *ngIf="mode==='buyer'">Buyer</ion-label>
 						<ion-toggle (ionChange)="toggle($event)"></ion-toggle>
-					</ion-item>
+					</ion-item> -->
 				
 					<!-- <p><i class="zmdi zmdi-directions-bike animated infinite fadeInLeft zmdi-hc-fw"></i> fadeInLeft</p> -->
 					<!-- <p><i class="zmdi zmdi-notifications-active animated infinite pulse zmdi-hc-fw mdc-text-blue"></i> pulse</p> -->
-					</div>
+					<!-- </div> -->
 			</div>
 			
 			<ion-content fullscreen>
-			        <custom-side-menu [menuList]="pageList"></custom-side-menu>
+			        <custom-side-menu  [menuList]="pageList"></custom-side-menu>
+					<ion-row>
+						
+						<ion-col col-10>
+							<ion-item  (click)="goBack()"> 
+					<ion-icon name="home-outline"></ion-icon>
 
+					<ion-label style="color: black;">Home</ion-label>
+
+							</ion-item>
+						</ion-col>
+						<ion-col col-1>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						
+						<ion-col col-10>
+							<ion-item  (click)="share()"> 
+					<ion-icon class="zmdi  zmdi-share ion-text-start"></ion-icon>
+
+					<ion-label style="color: black;">Invite</ion-label>
+
+							</ion-item>
+						</ion-col>
+						<ion-col col-1>
+						</ion-col>
+					</ion-row>
+					
+	
 			</ion-content>
+			
 		</ion-menu>
 		<ion-router-outlet id="main-content">
 
-			<ion-tabs *ngIf="show">
+			<ion-tabs >
 				<ion-tab-bar slot="bottom">
 				  <ion-tab-button tab="home" *ngIf="mode==='buyer'">
 					<ion-icon name="home-outline"></ion-icon>
 					<ion-label>Home</ion-label>
 				  </ion-tab-button>
 
-				  <ion-tab-button tab="new-orders" *ngIf="mode==='seller'">
+				  <ion-tab-button tab="seller-home" *ngIf="mode==='seller'">
 					<ion-icon name="home-outline"></ion-icon>
 					<ion-label>Home</ion-label>
 				  </ion-tab-button>
@@ -45,19 +73,19 @@
 					<ion-icon name="person-circle-outline"></ion-icon>
 					<ion-label>My Account</ion-label>
 				  </ion-tab-button>
-				  <ion-tab-button tab="wishlist">
+				 <!--  <ion-tab-button tab="wishlist" *ngIf="mode==='buyer'">
 					<ion-icon name="heart-circle-outline"></ion-icon>
 					<ion-label>Favorite</ion-label>
 				  </ion-tab-button>
-				  <ion-tab-button tab="sellers">
+				  <ion-tab-button tab="sellers"  *ngIf="mode==='buyer'">
 					<ion-img src="assets/images/seller_icon.png"></ion-img>
 		
 					<ion-label>Sellers</ion-label>
 				  </ion-tab-button>
-				  <ion-tab-button tab="cart">
+				  <ion-tab-button tab="cart"  *ngIf="mode==='buyer'">
 					<ion-icon name="cart-outline"></ion-icon>
 					<ion-label>Cart</ion-label>
-				  </ion-tab-button>
+				  </ion-tab-button> -->
 				</ion-tab-bar>
 			  </ion-tabs> 
 		</ion-router-outlet>

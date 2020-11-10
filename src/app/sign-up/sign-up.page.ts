@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 import { AuthService } from '../api/auth.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class SignUpPage implements OnInit {
 
   constructor(private route: Router,
     private auth: AuthService,
+    private api: ApiService,
     
     ) { }
 
@@ -19,13 +21,19 @@ export class SignUpPage implements OnInit {
   }
 
   verification() {
-    const phone = '+91'+this.user.phone.toString();
-    const password ='passwordless';
+    const phone = this.user.phone.toString();
+    const name =this.user.name;
     console.log(phone);
-    this.auth.signUp(phone, password)
+    this.api.createUser({
+      "name": name,
+        "mobile_number": phone
+    })
       .subscribe(
         result => {
-    this.route.navigate(['./verification']);
+    this.route.navigate(['./verification'],  { queryParams:  {
+      "name": name,
+        "mobile_number": phone
+    } });
           
           // this.loading = false;
 
@@ -41,6 +49,10 @@ export class SignUpPage implements OnInit {
      
          
           console.log(error);
+          this.route.navigate(['./verification'],  { queryParams:  {
+            "name": name,
+              "mobile_number": phone
+          } });
         }
       );
   }

@@ -1,0 +1,71 @@
+<ion-header translucent>
+	<ion-toolbar color="warning">
+	  <ion-buttons slot="start">
+		<ion-back-button defaultHref="/home"></ion-back-button>
+	  </ion-buttons>
+	  <ion-title>
+		Become Seller
+	  </ion-title>
+	
+	</ion-toolbar>
+  </ion-header>
+
+<ion-content>
+ 
+  <form>
+    <ion-grid>
+      <ion-row>
+        
+        <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
+          <ion-item>
+            <ion-label position="floating">Delivery Type</ion-label>
+            <ion-select value="usa" okText="Okay" cancelText="Dismiss">
+              <ion-select-option value="usa">Deliver to Home</ion-select-option>
+              <ion-select-option value="india">Self Pick Up</ion-select-option>
+           
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-lg="6" size-md="4" size-sm="4" size="12">
+          <ion-item>
+            <ion-label position="floating">Delivery Schedule</ion-label>
+            <ion-select value="california" okText="Okay" cancelText="Dismiss">
+              <ion-select-option value="f">Daily</ion-select-option>
+              <ion-select-option value="m">Weekly</ion-select-option>
+              <ion-select-option value="m">Alternate Days</ion-select-option>
+              <ion-select-option value="m">Monthly</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      
+      </ion-row>
+    </ion-grid>
+  </form>
+  
+      <ion-card>
+        <label class="file-upload">
+       ID
+        </label>
+        <ion-button expand="full">
+          <ion-icon lazy="true" slot="start" name="image"></ion-icon>
+          <ion-label slot="end">Upload Image</ion-label>
+          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+            accept="image/png, image/jpeg">
+        </ion-button>
+      </ion-card>
+      <ion-card>
+        <label class="file-upload">
+       Address Proof
+        </label>
+        <ion-button expand="full">
+          <ion-icon lazy="true" slot="start" name="image"></ion-icon>
+          <ion-label slot="end">Upload Image</ion-label>
+          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+            accept="image/png, image/jpeg">
+        </ion-button>
+      </ion-card>
+    
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-button size="large" expand="full" class="btn">Submit </ion-button>
+</ion-footer>

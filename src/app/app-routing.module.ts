@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',  redirectTo: 'home', pathMatch: 'full'
+    path: '',  redirectTo: 'app-modes', pathMatch: 'full'
   },
 	
   {
@@ -177,6 +177,18 @@ const routes: Routes = [
   {
     path: 'subscribe',
     loadChildren: () => import('./subscribe/subscribe.module').then( m => m.SubscribePageModule)
+  },
+  {
+    path: 'app-modes',
+    loadChildren: () => import('./app-modes/app-modes.module').then( m => m.AppModesPageModule)
+  },
+  {
+    path: 'seller-home',
+    loadChildren: () => import('./seller-home/seller-home.module').then( m => m.SellerHomePageModule)
+  },
+  {
+    path: 'seller-onboarding',
+    loadChildren: () => import('./seller-onboarding/seller-onboarding.module').then( m => m.SellerOnboardingPageModule)
   },
 ];
 

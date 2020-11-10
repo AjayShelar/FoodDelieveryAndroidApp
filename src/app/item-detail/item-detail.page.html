@@ -1,29 +1,52 @@
-<ion-header class="bg_transparent">
-	<ion-toolbar>
-		<ion-buttons slot="start">
-			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
-		</ion-buttons>
-		<ion-title>
-			<div class="title_inner d-flex">
+
+
+<ion-header translucent>
+	<ion-toolbar color="warning">
+	  <ion-buttons slot="start">
+		<ion-back-button defaultHref="/home"></ion-back-button>
+	  </ion-buttons>
+	  <ion-title>
+		
+	  </ion-title>
+	
+	</ion-toolbar>
+  </ion-header>
+<ion-content class="bg-color">
+	<div class="banner">
+	
+		<ion-row>
+			<ion-col>
 				<h3 class="end">
 					<span class="end cart_icon" (click)="cart()">
 						<ion-icon class="zmdi zmdi-mall ion-text-start"></ion-icon>
 						<ion-badge>2</ion-badge>
 					</span>
 				</h3>
-			</div>
-		</ion-title>
-	</ion-toolbar>
-</ion-header>
+			</ion-col>
+		</ion-row>
+		<br><br>
+		<ion-row>
+			<ion-col>
+				<h3 [ngClass]="FavoriteIcon ? 'active' : ''" (click)="toggleFavoriteIcon()">
+					<ion-icon class="zmdi zmdi-favorite-outline ion-text-start"></ion-icon>
 
-<ion-content class="bg-color">
-	<div class="banner">
-		<h3 [ngClass]="FavoriteIcon ? 'active' : ''" (click)="toggleFavoriteIcon()">
-			<ion-icon class="zmdi zmdi-favorite-outline"></ion-icon>
-			<ion-icon class="zmdi zmdi-favorite"></ion-icon>
-			<ion-icon class="zmdi zmdi-favorite" (click)="share()"></ion-icon>
-			
-		</h3>
+
+				</h3>
+			</ion-col>
+		</ion-row>
+		<br>
+		<br>
+		<ion-row>
+			<ion-col>
+				<h3 (click)="share()">
+					<ion-icon class="zmdi  zmdi-share ion-text-start"></ion-icon>
+
+
+				</h3>
+
+			</ion-col>
+		</ion-row>
+
 
 		<ion-slides pager="true" loop="true">
 			<ion-slide>
@@ -68,34 +91,36 @@
 				<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
 			</span>
 		</h4>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+			industry's standard dummy text ever since the 1500s, when an unknown </p>
 	</div>
-<ion-item>
-	<ion-button size="large" shape="full" class="btn">
-		<ion-icon class="zmdi zmdi-mall ion-text-start"></ion-icon>
-		{{'add_to_cart' | translate}}
-	</ion-button>
-</ion-item>
-	
-<ion-item>
-	<ion-button size="large" color="green" shape="full" class="btn" (click)="subscribe(product)">
-		<ion-icon class="zmdi zmdi-mall ion-text-start"></ion-icon>
-		Subscribe
-	</ion-button>
-</ion-item>
-	
+	<ion-item>
+		<ion-button size="large" shape="full" class="btn">
+			<ion-icon class="zmdi zmdi-mall ion-text-start"></ion-icon>
+			{{'add_to_cart' | translate}}
+		</ion-button>
+	</ion-item>
+<!-- 
+	<ion-item>
+		<ion-button size="large" color="success" shape="full" class="btn" (click)="subscribe(product)">
+			<ion-icon class="zmdi zmdi-calendar-check  ion-text-start"></ion-icon>
+			Subscribe
+		</ion-button>
+	</ion-item> -->
+
 
 	<div class="more_by_seller">
-		<h2 class="d-flex" (click)="seller_info()">{{'more_by' | translate}} &nbsp;<strong>{{'seller' | translate}}</strong><span class="end ">{{'view_all' | translate}}</span></h2>
+		<h2 class="d-flex" (click)="seller_info()">{{'more_by' | translate}}
+			&nbsp;<strong>{{'seller' | translate}}</strong><span class="end ">{{'view_all' | translate}}</span></h2>
 		<div class="items_row">
 			<div class="item">
 				<div class="item_img center_img">
 					<img src="assets/images/item_6.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Blue Medium</h3> 
+					<h3>Blue Medium</h3>
 					<h5 class="d-flex">
-						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span> 
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span>
 					</h5>
 				</div>
 			</div>
@@ -104,7 +129,7 @@
 					<img src="assets/images/item_4.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Large Pink</h3> 
+					<h3>Large Pink</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
 					</h5>
@@ -115,7 +140,7 @@
 					<img src="assets/images/item3.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3> Full Sleven Tshirt</h3> 
+					<h3> Full Sleven Tshirt</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
 					</h5>
@@ -126,9 +151,9 @@
 					<img src="assets/images/item_6.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Blue Medium</h3> 
+					<h3>Blue Medium</h3>
 					<h5 class="d-flex">
-						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span> 
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span>
 					</h5>
 				</div>
 			</div>
@@ -137,7 +162,7 @@
 					<img src="assets/images/item_4.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Large Pink</h3> 
+					<h3>Large Pink</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
 					</h5>
@@ -148,7 +173,7 @@
 					<img src="assets/images/item3.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3> Full Sleven Tshirt</h3> 
+					<h3> Full Sleven Tshirt</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
 					</h5>
@@ -159,9 +184,9 @@
 					<img src="assets/images/item_6.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Blue Medium</h3> 
+					<h3>Blue Medium</h3>
 					<h5 class="d-flex">
-						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span> 
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span>
 					</h5>
 				</div>
 			</div>
@@ -170,7 +195,7 @@
 					<img src="assets/images/item_4.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Large Pink</h3> 
+					<h3>Large Pink</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
 					</h5>
@@ -181,7 +206,7 @@
 					<img src="assets/images/item3.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3> Full Sleven Tshirt</h3> 
+					<h3> Full Sleven Tshirt</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
 					</h5>
@@ -192,9 +217,9 @@
 					<img src="assets/images/item_6.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Blue Medium</h3> 
+					<h3>Blue Medium</h3>
 					<h5 class="d-flex">
-						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span> 
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span>
 					</h5>
 				</div>
 			</div>
@@ -203,7 +228,7 @@
 					<img src="assets/images/item_4.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Large Pink</h3> 
+					<h3>Large Pink</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
 					</h5>
@@ -214,7 +239,7 @@
 					<img src="assets/images/item3.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3> Full Sleven Tshirt</h3> 
+					<h3> Full Sleven Tshirt</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
 					</h5>
@@ -225,9 +250,9 @@
 					<img src="assets/images/item_6.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Blue Medium</h3> 
+					<h3>Blue Medium</h3>
 					<h5 class="d-flex">
-						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span> 
+						<span class="price"><span style='font-size:19px;'>&#8377;</span>32.00</span>
 					</h5>
 				</div>
 			</div>
@@ -236,7 +261,7 @@
 					<img src="assets/images/item_4.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3>Large Pink</h3> 
+					<h3>Large Pink</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
 					</h5>
@@ -247,7 +272,7 @@
 					<img src="assets/images/item3.png" class="crop_img">
 				</div>
 				<div class="item_details">
-					<h3> Full Sleven Tshirt</h3> 
+					<h3> Full Sleven Tshirt</h3>
 					<h5 class="d-flex">
 						<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
 					</h5>

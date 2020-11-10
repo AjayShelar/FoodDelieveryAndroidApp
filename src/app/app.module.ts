@@ -47,6 +47,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusBar,
     SplashScreen,
     SocialSharing,
+     //ADD GEOLOCATION Y GEOCODER ON THE PROVIDERS.
+     Geolocation,    
+     NativeGeocoder,
     Camera,
     File,
     { provide: APP_CONFIG, useValue: BaseAppConfig },
@@ -67,11 +70,15 @@ import { AuthService } from './api/auth.service';
 import { GoogleMapsService } from './google-maps.service';
 import { ConnectivityServiceService } from './connectivity-service.service';
 import { Network } from '@ionic-native/network';
-import { NativeGeocoder } from '@ionic-native/native-geocoder';
+
 import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 import { ComponentsModule } from './components/components.module';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from './popover/popover.module';
+
+//IMPORT THE PLUGINS
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 Amplify.configure(environment.amplify);

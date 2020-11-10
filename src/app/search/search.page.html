@@ -1,19 +1,33 @@
-<ion-header>
+<ion-header translucent>
+	<ion-toolbar color="warning">
+	  <ion-buttons slot="start">
+		<ion-back-button defaultHref="/"></ion-back-button>
+	  </ion-buttons>
+		  <ion-row>
+		
+			<ion-col>
+				<!-- <ion-searchbar mode="md" class="ion-no-padding" searchIcon="hide" placeholder="start searching...."></ion-searchbar> -->
+				<ion-input placeholder="start searching...."></ion-input>
+			</ion-col>
+
+		  </ion-row>
+	</ion-toolbar>
+  </ion-header>
+<!-- <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
 		<ion-title>
 			<div class="title_inner d-flex">
-				<ion-searchbar mode="md" class="ion-no-padding" searchIcon="hide" placeholder="{{'search_on_shophour' | translate}}"></ion-searchbar>
-				<ion-icon class="zmdi zmdi-search ion-text-start end"></ion-icon>
+				<ion-searchbar mode="md" class="ion-no-padding" searchIcon="hide" placeholder="start searching...."></ion-searchbar>
 			</div>
 		</ion-title>
 	</ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content fullscreen>
-	<div class="resent_searches">
+	<!-- <div class="resent_searches">
 		<h2>{{'resent_searches' | translate}}</h2>
 		<h3 class="d-flex" (click)="search_result()">
 			<ion-icon class="zmdi zmdi-time-restore"></ion-icon> White Tshirt
@@ -149,7 +163,7 @@
 					<img src="assets/images/Electronics.png" class="crop_img">
 				</div>
 			</div>
-		</div>
-	</div>
+		</div> -->
+	<!-- </div> -->
 
 </ion-content>

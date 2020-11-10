@@ -21,6 +21,21 @@ public getHomepage(params): Observable<any> {
   let url = this.baseUrl + 'HOMEPAGE';
   return this.postData(url, params);
 }
+public createUser(params): Observable<any> {
+  let url = this.baseUrl + 'user';
+  return  this.httpClient.post<any>(
+    url, params,
+   
+  )
+}
+
+public submitOtp(params): Observable<any> {
+  let url = this.baseUrl + 'otp';
+  return  this.httpClient.post<any>(
+    url, params,
+   
+  )
+}
 public createProduct(params): Observable<any> {
   let url = this.baseUrl + 'product';
   return  this.httpClient.post<any>(
@@ -46,7 +61,13 @@ public addToCart(params): Observable<any> {
       "action": "add"
   });
 }
-
+public getOtp(params): Observable<any> {
+//   {	"action": "request_otp",
+//   "mobile_number": "1234567890"
+// }
+  let url = this.baseUrl + 'otp';
+  return this.postData(url,params );
+}
 public getCart(pk): Observable<any> {
   let url = this.baseUrl + 'cart?pk='+ pk;
   return this.postData(url, {});

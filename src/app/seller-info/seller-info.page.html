@@ -1,5 +1,5 @@
-<ion-header class="bg_transparent">
-	<ion-toolbar>
+<!-- <ion-header class="bg_transparent"> -->
+	<!-- <ion-toolbar>
 		<ion-buttons slot="start">
 			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
 		</ion-buttons>
@@ -20,542 +20,83 @@
 			<img src="assets/images/seller_profile.png" class="crop_img">
 		</div>
 		<h2>Operum England</h2>
-	</div>
+	</div> -->
+<!-- </ion-header> -->
+<ion-header>
+	<ion-toolbar color="warning">
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/home"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			Seller Profile
+		</ion-title>
+	</ion-toolbar>
 </ion-header>
+<ion-content >
 
-<ion-content fullscreen>
-	<div class="item_container">
-		<ion-row>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/1.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Wgite Top</h3>
-						<h4>Pajeroma</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
+		<div class="wrapper">
+			<div class="top-icons">
+				<i class="fas fa-long-arrow-alt-left"></i>
+				<i class="fas fa-ellipsis-v"></i>
+				<i class="far fa-heart"></i>
+			</div>
+			
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1484186139897-d5fc6b908812?ixlib=rb-0.3.5&s=9358d797b2e1370884aa51b0ab94f706&auto=format&fit=crop&w=200&q=80%20500w" class="thumbnail">
+				<div class="check"><i class="fas fa-check"></i></div>
+				<h3 class="name">Barkha Dutt</h3>
+				<p class="title">Chef</p>
+				<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam aliquid porro!</p>
+				<button type="button"  (click)="share()" class="btn">Share Profile</button>
+				<!-- <h3 (click)="share()">
+					<ion-icon class="zmdi  zmdi-share ion-text-start"></ion-icon>
+	
+	
+				</h3> -->
+			</div>
+			
+			<div class="social-icons">
+				<div class="icon">
+					<a href="/">
+						<i class="zmdi zmdi-shopping-basket"></i>
+						</a>
+					<h4>12.8k</h4>
+					<p>Orders</p>
 				</div>
-			</ion-col>
+				
+				<div class="icon">
+					<a href="#">
+						<i class="zmdi zmdi-truck"></i>
+						</a>
+					<h4>12.8k</h4>
+					<p>Deliveries</p>
+				</div>
+				
+				<div class="icon">
+					<a href="#"><i class="zmdi zmdi-thumb-up"></i></a>
+					<h4>12.8k</h4>
+					<p>Followers</p>
+				</div>
+			</div>
+			
+		</div>
+<br>
+<br>
+<br>
 
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/2.png" class="crop_img">
+		<div class="wrapper">
+			<ion-grid>
+				<ion-row>
+				  <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let image of [4, 7, 6,8,4,7,6,7,8,4]">
+					<div class="img-wrapper" [style.background-image]="'url(assets/images/item_' + image + '.png)'">
 					</div>
-					<div class="item_details">
-						<h3> Floral Print Shirt</h3>
-						<h4>Lecoil Evea</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>44.00</span>
-							<ion-badge class="end">
-								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item3.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_6.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/1.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Wgite Top</h3>
-						<h4>Pajeroma</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/2.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3> Floral Print Shirt</h3>
-						<h4>Lecoil Evea</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>44.00</span>
-							<ion-badge class="end">
-								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item3.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_6.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/1.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Wgite Top</h3>
-						<h4>Pajeroma</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/2.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3> Floral Print Shirt</h3>
-						<h4>Lecoil Evea</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>44.00</span>
-							<ion-badge class="end">
-								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item3.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_6.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/1.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Wgite Top</h3>
-						<h4>Pajeroma</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/2.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3> Floral Print Shirt</h3>
-						<h4>Lecoil Evea</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>44.00</span>
-							<ion-badge class="end">
-								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item3.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_6.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/1.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Wgite Top</h3>
-						<h4>Pajeroma</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>30.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/2.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3> Floral Print Shirt</h3>
-						<h4>Lecoil Evea</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>44.00</span>
-							<ion-badge class="end">
-								3.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item3.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_6.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Summer Full Sleven Tshirt</h3>
-						<h4>Calvis Dino</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>35.00</span>
-							<ion-badge class="end">
-								3.7 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-
-			<ion-col size="6">
-				<div class="item" (click)="item_details()">
-					<div class="item_img center_img">
-						<img src="assets/images/item_4.png" class="crop_img">
-					</div>
-					<div class="item_details">
-						<h3>Black Cotton Top</h3>
-						<h4>Operun England</h4>
-						<h5 class="d-flex">
-							<span class="price"><span style='font-size:19px;'>&#8377;</span>42.00</span>
-							<ion-badge class="end">
-								4.2 <ion-icon class="zmdi zmdi-star"></ion-icon>
-							</ion-badge>
-						</h5>
-					</div>
-				</div>
-			</ion-col>
-		</ion-row>
-	</div>
+				  </ion-col>
+				</ion-row>
+			  </ion-grid>
+			
+			
+	
+			
+		</div>	
+	
 </ion-content>
