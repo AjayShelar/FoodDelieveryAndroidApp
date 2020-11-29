@@ -19,4 +19,8 @@ export class OrderConfirmPage implements OnInit {
   my_orders() {
     this.navCtrl.navigateRoot(['./my-orders']);
   } 
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
 }

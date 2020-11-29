@@ -34,10 +34,14 @@ export class VerificationPage implements OnInit {
   home() {
     this.navCtrl.navigateRoot(['./home']);
 
+  }
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
   } 
   onSubmitConfirmation() {
     const phone = this.user.phone, confirmationCode = this.user.code;
-
+    console.log('sadasjd')
     this.api.submitOtp({
       "otp": confirmationCode,
         "mobile_number": phone
@@ -55,7 +59,7 @@ export class VerificationPage implements OnInit {
         },
         error => {
           this.router.navigate(['./app-modes']);
-          let loggedIn = localStorage.setItem('loggedIn', JSON.stringify({loggedIn:true}));
+          // let loggedIn = localStorage.setItem('loggedIn', JSON.stringify({loggedIn:true}));
 
           console.log(error);
         });

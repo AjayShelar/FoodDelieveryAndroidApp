@@ -12,7 +12,10 @@ export class SearchPage implements OnInit {
 
   ngOnInit() {
   }
-
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
 search_result() {
     this.route.navigate(['./search-result']);
   } 

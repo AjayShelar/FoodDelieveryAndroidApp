@@ -22,10 +22,17 @@ export class AppModesPage implements OnInit {
       this.mode = mode;
       localStorage.setItem('mode', JSON.stringify({mode:this.mode}));
   }
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
   navigate(page){
+    console.log(page, 'navigate')
     switch (page) {
+
       case 'homepage':
-        this.router.navigateByUrl('home');
+
+        this.router.navigateByUrl('/home');
         
         break;
       case 'sellers':

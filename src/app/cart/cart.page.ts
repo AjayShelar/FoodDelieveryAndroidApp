@@ -15,6 +15,10 @@ export class CartPage implements OnInit {
 
   ngOnInit() {
   }
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
  select_address() {
     this.route.navigate(['./select-address']);
   } 

@@ -11,5 +11,8 @@ export class NotificationsPage implements OnInit {
 
   ngOnInit() {
   }
-
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
 }

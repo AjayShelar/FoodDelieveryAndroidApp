@@ -242,7 +242,8 @@ export class AppComponent implements OnInit {
   showSideMenu = false;
   constructor(
     @Inject(APP_CONFIG) public config: AppConfig,
-    private platform: Platform, private navCtrl: NavController,
+    private platform: Platform, 
+    private navCtrl: NavController,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
 
@@ -262,13 +263,13 @@ export class AppComponent implements OnInit {
     localStorage.setItem('mode', JSON.stringify({
       mode: 'buyer'
     }));
-    let loggedIn = JSON.parse(localStorage.getItem('loggedIn'));
-    if (loggedIn) {
-      this.router.navigateByUrl('app-modes');
+    // let loggedIn = JSON.parse(localStorage.getItem('loggedIn'));
+    // if (loggedIn) {
+    //   this.router.navigateByUrl('app-modes');
 
-    } else {
-      this.router.navigateByUrl('sign-up');
-    }
+    // } else {
+    //   this.router.navigateByUrl('sign-up');
+    // }
     if (['/home', '/my-profile', '/wishlist', '/seller'].includes(this.router.url)) {
       this.show = false;
     }
@@ -418,12 +419,18 @@ export class AppComponent implements OnInit {
     return 'home'
   }
   goBack() {
-    this.navCtrl.back();
+    // this.navCtrl.back();
+    // this.navCtrl.navigateRoot('app-modes');
+    this.router.navigateByUrl('/app-modes');
+
+
     }
   navigate(page) {
     switch (page) {
       case 'modes':
-        this.router.navigateByUrl('app-modes', { skipLocationChange: true });
+        
+        this.navCtrl.navigateRoot('app-modes');
+        // navigateByUrl('app-modes', { skipLocationChange: true });
         break;
       case 'homepage':
         this.router.navigateByUrl('home', { skipLocationChange: true });

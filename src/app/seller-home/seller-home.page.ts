@@ -26,5 +26,8 @@ phone:""};
   goToSellerOnboarding(){
     this.router.navigate(['./seller-onboarding'])
   }
-
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "flex";
+  
+  }
 }

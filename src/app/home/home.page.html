@@ -20,6 +20,9 @@
 				
 			</i>
 	  </ion-buttons>
+	 
+	
+
 <ion-buttons (click)="notifications()" slot="end">
 			<ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
 	
@@ -37,6 +40,8 @@
 </ion-header> 
 
 <ion-content fullscreen>
+	
+	
 	<div class="category_row"> 
 		<div *ngFor="let category of categories" class="category fashion" (click)="item(category.product_category)">
 			<div class="img_box center_img">

@@ -1,7 +1,7 @@
 <ion-header translucent>
 	<ion-toolbar color="warning">
 	  <ion-buttons slot="start">
-		<ion-back-button defaultHref="/home"></ion-back-button>
+		<ion-back-button defaultHref="/"></ion-back-button>
 	  </ion-buttons>
 	  <ion-title>
 		Become Seller
@@ -18,22 +18,22 @@
         
         <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
           <ion-item>
-            <ion-label position="floating">Delivery Type</ion-label>
-            <ion-select value="usa" okText="Okay" cancelText="Dismiss">
-              <ion-select-option value="usa">Deliver to Home</ion-select-option>
-              <ion-select-option value="india">Self Pick Up</ion-select-option>
+            <ion-label style="color: black;" position="floating">Delivery Type</ion-label>
+            <ion-select style="color: black;" value="usa" okText="Okay" cancelText="Dismiss">
+              <ion-select-option style="color: black;" value="usa">Deliver to Home</ion-select-option>
+              <ion-select-option style="color: black;" value="india">Self Pick Up</ion-select-option>
            
             </ion-select>
           </ion-item>
         </ion-col>
         <ion-col size-lg="6" size-md="4" size-sm="4" size="12">
           <ion-item>
-            <ion-label position="floating">Delivery Schedule</ion-label>
-            <ion-select value="california" okText="Okay" cancelText="Dismiss">
-              <ion-select-option value="f">Daily</ion-select-option>
-              <ion-select-option value="m">Weekly</ion-select-option>
-              <ion-select-option value="m">Alternate Days</ion-select-option>
-              <ion-select-option value="m">Monthly</ion-select-option>
+            <ion-label style="color: black;" position="floating">Delivery Schedule</ion-label>
+            <ion-select  style="color: black;" value="california" okText="Okay" cancelText="Dismiss">
+              <ion-select-option style="color: black;" value="f">Daily</ion-select-option>
+              <ion-select-option style="color: black;" value="m">Weekly</ion-select-option>
+              <ion-select-option style="color: black;" value="m">Alternate Days</ion-select-option>
+              <ion-select-option style="color: black;" value="m">Monthly</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
@@ -48,18 +48,18 @@
         </label>
         <ion-button expand="full">
           <ion-icon lazy="true" slot="start" name="image"></ion-icon>
-          <ion-label slot="end">Upload Image</ion-label>
+          <ion-label style="color: black;" slot="end">Upload Image</ion-label>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>
       </ion-card>
       <ion-card>
-        <label class="file-upload">
+        <label style="color: black;" class="file-upload">
        Address Proof
         </label>
         <ion-button expand="full">
           <ion-icon lazy="true" slot="start" name="image"></ion-icon>
-          <ion-label slot="end">Upload Image</ion-label>
+          <ion-label slot="end" style="color: black;">Upload Image</ion-label>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>

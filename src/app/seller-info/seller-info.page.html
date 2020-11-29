@@ -25,7 +25,7 @@
 <ion-header>
 	<ion-toolbar color="warning">
 		<ion-buttons slot="start">
-			<ion-back-button defaultHref="/home"></ion-back-button>
+			<ion-back-button defaultHref="/"></ion-back-button>
 		</ion-buttons>
 		<ion-title>
 			Seller Profile
@@ -48,6 +48,26 @@
 				<p class="title">Chef</p>
 				<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam aliquid porro!</p>
 				<button type="button"  (click)="share()" class="btn">Share Profile</button>
+				<br>
+				<br>
+						<ion-list>
+							<ion-radio-group value="biff">
+							  <ion-list-header>
+								<ion-label>Subscription</ion-label>
+							  </ion-list-header>
+						  
+							  <ion-item>
+								<ion-label>Subscribed</ion-label>
+								<ion-radio slot="start" value="biff"></ion-radio>
+							  </ion-item>
+							  <ion-item>
+								<ion-label>Not subscribed</ion-label>
+								<ion-radio slot="start" ></ion-radio>
+							  </ion-item>
+							
+							</ion-radio-group>
+						  </ion-list>
+					
 				<!-- <h3 (click)="share()">
 					<ion-icon class="zmdi  zmdi-share ion-text-start"></ion-icon>
 	
@@ -80,6 +100,22 @@
 			</div>
 			
 		</div>
+<br>
+<br>
+<br>
+<div class="wrapper">
+	<ion-grid>
+		<ion-row>
+		  <ion-col sizeLg="4" sizeMd="2" sizeXs="4" *ngFor="let image of [1, 2, 3,3,1,2,2,3,1]">
+			<div class="img-wrapper" [style.background-image]="'url(assets/images/gallery_' + image + '.jpeg)'">
+			</div>
+		  </ion-col>
+		</ion-row>
+	  </ion-grid>
+	
+	
+</div>	
+	
 <br>
 <br>
 <br>

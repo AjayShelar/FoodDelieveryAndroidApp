@@ -18,7 +18,10 @@ sk:'PRODUCT_2d8d0e78-3c7f-4310-b6e3-a3fe409fd126'};
  toggleFavoriteIcon(){
    this.FavoriteIcon = !this.FavoriteIcon;
    }
-	
+   ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
 cart() {
     this.route.navigate(['./cart']);
   } 

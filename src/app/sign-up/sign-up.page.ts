@@ -19,7 +19,10 @@ export class SignUpPage implements OnInit {
 
   ngOnInit() {
   }
-
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
   verification() {
     const phone = this.user.phone.toString();
     const name =this.user.name;

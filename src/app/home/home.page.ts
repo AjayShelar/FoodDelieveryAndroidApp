@@ -176,15 +176,7 @@ if(params['location']){
       
     }
 
-    ionViewDidLoad() {
-      // console.log(JSON.parse(localStorage.getItem('location')));
-      // if(JSON.parse(localStorage.getItem('location'))){
-      // this.defaultLocation = JSON.parse(localStorage.getItem('location'))
-  
-      // }
-      
-
-    }
+   
   ngOnInit() {
 
     // console.log(JSON.parse(localStorage.getItem('location')));
@@ -230,7 +222,10 @@ if(params['location']){
   add_address() {
     this.route.navigate(['./add-address']);
   } 
-
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "flex";
+  
+  }
 }
 
    

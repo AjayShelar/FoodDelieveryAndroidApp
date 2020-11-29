@@ -12,7 +12,10 @@ export class MyProfilePage implements OnInit {
 
   ngOnInit() {
   }
-
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
 add_address() {
     this.route.navigate(['./add-address']);
   } 

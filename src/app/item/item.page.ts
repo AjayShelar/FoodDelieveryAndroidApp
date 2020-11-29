@@ -40,7 +40,10 @@ category_items = [];
       });
     });
   }
-
+  ionViewDidEnter() {
+    document.getElementById('ion-tab-bar').style.display = "none";
+  
+  }
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
       component: PopoverComponent,
